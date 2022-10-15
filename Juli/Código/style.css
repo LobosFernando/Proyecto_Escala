@@ -1,0 +1,314 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.encabezado {
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+}
+.img {
+    height: 50px;
+    width:auto;
+    z-index: 2;
+    margin: 0 auto;
+    margin-left: 45px;
+    margin-top: 12px;
+    position: relative;
+    
+}
+.nav {
+    width: 600px;
+    height: 70px;
+    position: relative;
+    margin-left: 750px;
+    margin-top: -62px !important;
+    z-index: 2;
+    color: white;
+    
+}
+.nav p {
+    margin-top: 23px;
+    margin-left: 6%;
+    float: left;
+}
+a {
+    margin-top: 17px;
+    margin-left: 6%;
+    float: left;
+    
+}
+
+.btnIniciarSesion {
+    width: 125px;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    margin-top: 17px;
+    margin-left: 6%;
+    float: left;
+    height: 50%;
+    border-radius: 2em;
+  border:none;
+  outline: 2px solid rgb(92, 92, 92);
+  outline-offset: 3px;
+  position: relative;
+  transition: all 0.5s ease;
+  
+}
+.btnIniciarSesion:hover {
+  background: white;
+  color: rgb(92, 92, 92)!important;
+}
+
+.efectoSubrayado {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+.leftToRight::after {
+    content: '';
+    position: absolute;
+    width:100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:white;
+    transform-origin: bottom right ;
+    transition: transform 0.25s ease-out;
+}
+.leftToRight:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#carrusel-caja {
+    -moz-animation: automatizacion 10s infinite linear;
+    -o-animation: automatizacion 10s infinite linear;
+    -webkit-animation: automatizacion 10s infinite linear;
+    animation: automatizacion 10s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -moz-transition: all 0.75s ease;
+    -ms-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    height: 500px;
+    width: 300%;
+}
+#carrusel-contenido {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+}
+.imagenes{
+    height: 550px;
+    width: 100%;
+}
+.carrusel-elemento {
+    float: left;
+    width: 33.333%;
+}
+@-moz-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@-webkit-keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+@keyframes automatizacion {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -100%;
+    }
+    65% {
+        margin-left: -100%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    95% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+.accesoDirectoTienda {
+    background-color: black;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.tiendaMujer .imgTiendaMujer {
+    margin-top: 40px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transition: all 0.7s;
+    
+}
+.textoEncima  {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    transition: 0.7s;
+}
+.textoEncimaH {
+    position: absolute;
+    top: 50%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    transition: 0.7s;
+}
+.imgTiendaMujer:hover {
+    filter: blur(5px);
+}
+.tiendaMujer:hover .textoEncima{
+    color: black;
+}
+
+
+.tiendaHombre .imgTiendaHombre {
+    margin-top: 40px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    float: left;
+    transition: all 0.7s;
+    
+
+}
+.tiendaHombre:hover .textoEncimaH{
+    color: black;
+}
+
+.imgTiendaHombre:hover {
+    filter: blur(5px);
+}
+h1 {
+    
+    text-align: center !important;
+}
+.footer {
+    background-color: rgb(58, 55, 55);
+    width: 100%;
+    height: 180px;
+    
+
+}
+.contieneEnlaces {
+    position: relative;
+}
+.enlacesFooter {
+    color: white;
+    text-decoration: none;
+    margin-left: 10%;
+    float: left;
+    
+}
+
+.imgRedes {
+    height: 25px;
+    width: 25px;
+}
+.btn-wsp{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 63px;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    background: #FFF;
+    color: #20ba5a;
+    
+}
+.recuadroRegister , .recuadroRecup, .recuadroLogin {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 30%;
+    height: auto;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border:1px solid black;
+  padding: 1%;
+}
+
+.cajas {
+float: right;
+}
+.btnRegister {
+    width: auto;
+    
+}
+.tengoCuenta {
+    margin-left: 30% ;
+}
