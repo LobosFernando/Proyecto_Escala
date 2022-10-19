@@ -18,7 +18,7 @@ if (!$conn) {
 else {
     echo ("Conexión OK");
 }
-if (isset($_POST["submit"])) {
+
 
     $nombre = $_POST['cajaNombre'];
     $nombreDeUsuario = $_POST['cajaUser'];
@@ -26,22 +26,7 @@ if (isset($_POST["submit"])) {
     $contraseña = $_POST['cajaPass'];
     $consulta = "INSERT INTO usuarios (nombreDeUsuario, nombre, correoElectronico, contraseña) VALUES ('$nombreDeUsuario','$nombre','$correo', '$contraseña')";
     $resultado = mysqli_query($conn, $consulta);
-    if ($resultado) {
-?>
-    <h3>chetoo</h3>
-    <?php
-    }
-    else {
-?>
-    <h3>ups</h3>
-    <?php
-    }
-}
-else {
-?>
-    <h3>completaa</h3>
-    <?php
-}
+
 
 
 ?>
