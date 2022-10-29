@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
 
 <body>
     <div class="encabezado">
-           <img class="img" src="logo.png" alt="">
+           <img class="img" src="Assets/Imágenes/logo.png" alt="">
         <div class="nav">
             <p class="efectoSubrayado leftToRight">Inicio</p>
             <p class="efectoSubrayado leftToRight">Tienda</p>
@@ -30,13 +30,13 @@
     <div id="carrusel-contenido">
         <div id="carrusel-caja">
             <div class="carrusel-elemento">
-                <img class="imagenes" src="imagen1.jpg" >
+                <img class="imagenes" src="Assets/Imágenes/imagen1.jpg" >
             </div>
             <div class="carrusel-elemento">   
-                <img class="imagenes" src="imagen2.jpg">
+                <img class="imagenes" src="Assets/Imágenes/imagen2.jpg">
             </div>
             <div class="carrusel-elemento">   
-                <img class="imagenes" src="imagen3.jpg">                        
+                <img class="imagenes" src="Assets/Imágenes/imagen3.jpg">                        
             </div>
         </div>
 
@@ -48,7 +48,7 @@
         </center>
         <div class="tiendaMujer">
             
-            <a href="tiendaMujer.html"><img class="imgTiendaMujer" src="tiendamujer.jpg" alt=""></a>
+            <a href="tiendaMujer.html"><img class="imgTiendaMujer" src="Assets/Imágenes/tiendamujer.jpg" alt=""></a>
             <div class="textoEncima">Ir a la tienda de mujer</div>
 
         </div>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="footer">
-        <p style="color:white; margin-left: 550px;font-size: 25px; padding-top: 25px; ">SEGUINOS EN:      <img class="imgRedes" src="image.png" alt="">          <img class="imgRedes" src="image (1).png" alt=""> </p>
+        <p style="color:white; margin-left: 550px;font-size: 25px; padding-top: 25px; ">SEGUINOS EN:      <img class="imgRedes" src="Assets/Imágenes/image.png" alt="">          <img class="imgRedes" src="Assets/Imágenes/image (1).png" alt=""> </p>
         <div class="contieneEnlaces">
             <a class="enlacesFooter" href="">SOBRE NOSOTROS</a>
             <a class="enlacesFooter" href="">PREGUNTAS FRECUENTES</a>
