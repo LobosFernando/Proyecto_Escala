@@ -27,8 +27,33 @@
         <h1>Mujer</h1>
 
     </div>
-    <div class="categorias">
-        
+    <center>
+        <div class="categorias">
+            <a href="" class="item-cat-mujer" id="remeras">
+                <h1 id="texto"> Remeras </h1>
+            </a>
+            <a href="" class="item-cat-mujer" id="jeans">
+                <h1 id="texto"> Jeans </h1>
+            </a>
+            <a href="" class="item-cat-mujer" id="shorts">
+                <h1 id="texto"> Shorts </h1>
+            </a>
+            <a href="" class="item-cat-mujer" id="abrigos">
+                <h1 id="texto"> Abrigos </h1>
+            </a>
+        </div>
+    </center>
+    <a href="https://api.whatsapp.com/send?phone=543564589550" target="_blank" class="btn-wsp"> <i class="fa fa-whatsapp icono"></i></i></a>
+    <div class="footer">
+        <p style="color:white; margin-left: 550px;font-size: 25px; padding-top: 25px; ">SEGUINOS EN: <img class="imgRedes" src="Assets/Imágenes/image.png" alt=""> <img class="imgRedes" src="Assets/Imágenes/image (1).png" alt=""> </p>
+        <div class="contieneEnlaces">
+            <a class="enlacesFooter" href="">SOBRE NOSOTROS</a>
+            <a class="enlacesFooter" href="">PREGUNTAS FRECUENTES</a>
+            <a class="enlacesFooter" href="">PAGO Y ENVÍO</a>
+            <a class="enlacesFooter" href="">POLÍTICAS DE CAMBIO</a>
+
+        </div>
+
     </div>
 </body>
 

@@ -326,3 +326,49 @@ h1 {
   text-align: center;
   border-bottom: 1px solid rgba(70, 69, 69, 0.322);
 }
+
+.categorias {
+  margin: 4%;
+  padding: 1em;
+  width: 88%;
+  height: 530px;
+  overflow: hidden;
+  
+}
+.item-cat-mujer {
+  background-color: #20ba5a;
+  width: 19%;
+  height: 450px;
+  margin: 1em;
+  padding: 1.2em;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  transition: 1s;
+  text-decoration: none;
+}
+.item-cat-mujer:hover{
+  -webkit-filter: blur(5px);
+         filter: blur(5px);
+}
+#texto {
+  background-color: red;
+  margin-top: 100%;
+  transition: 1s;
+  color: #fff;
+  text-shadow:0 0 10px black;
+}
+#remeras {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/09/A222210027-Remera-90s-Baby-Blanco.jpg);
+}
+#jeans {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/09/A222220029-Jean-Push-Up-Enterprise-frente.jpg);
+}
+#shorts {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/10/A222219005-Short-Heart-frente.jpg);
+}
+#abrigos {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/08/A222230001-Campera-Fantastic.jpg);
+}
