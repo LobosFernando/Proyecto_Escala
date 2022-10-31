@@ -11,7 +11,7 @@
 
 <body>
     <div class="encabezado">
-        <center> <img class="img" src="logo.png" alt=""></center>
+        <center> <img class="img" src="Assets/Imágenes/logo.png" alt=""></center>
     </div>
 
     <div class="recuadroRegister">

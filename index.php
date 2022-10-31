@@ -20,7 +20,7 @@
             <p class="efectoSubrayado leftToRight">Tienda</p>
             <p class="efectoSubrayado leftToRight">Acerca de</p>
             <p class="efectoSubrayado leftToRight">Contacto</p>
-            <a href=""><img src="carritoFinal.png" alt="" ></a>
+            <a href=""><img src="Assets/Imágenes/carritoFinal.png" alt="" ></a>
             <button class="btnIniciarSesion">Iniciar sesión</button>
             </button>
         </div>
