@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <title>Tienda mujer</title>
+    <title>Remeras Mujer</title>
 </head>
 
 <body>
@@ -27,22 +27,23 @@
 
     </div>
     <div class="titulo-tienda">
-        <h1>Mujer</h1>
+        <h1>Remeras/Mujer</h1>
 
     </div>
+    
     <center>
         <div class="categorias">
-            <a href="" class="item-cat-mujer" id="remeras">
-                <h1 id="texto"> Remeras </h1>
+            <a href="" class="item-cat-mujer" id="remeraStars">
+              
             </a>
-            <a href="" class="item-cat-mujer" id="jeans">
-                <h1 id="texto"> Jeans </h1>
+            <a href="" class="item-cat-mujer" id="remeraJustina">
+               
             </a>
-            <a href="" class="item-cat-mujer" id="shorts">
-                <h1 id="texto"> Shorts </h1>
+            <a href="" class="item-cat-mujer" id="remeraPositive">
+                
             </a>
-            <a href="" class="item-cat-mujer" id="abrigos">
-                <h1 id="texto"> Abrigos </h1>
+            <a href="" class="item-cat-mujer" id="remeraPotential">
+                
             </a>
         </div>
     </center>

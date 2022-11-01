@@ -166,7 +166,7 @@ a {
 }
 
 .accesoDirectoTienda {
-  margin: 0;
+  margin-top: -10px;
   background-color: black;
   width: 100%;
   height: 600px;
@@ -371,4 +371,16 @@ h1 {
 }
 #abrigos {
   background-image: url(https://afjeans.ar/wp-content/uploads/2022/08/A222230001-Campera-Fantastic.jpg);
+}
+#remeraStars {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/08/A122210010-Remera-Stars-RosaLavanda.jpg);
+}
+#remeraJustina {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/09/A222210022-Remera-Justina-Crudo.jpg);
+}
+#remeraPositive {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/10/A222210031-Remera-Positive-Verde.jpg);
+}
+#remeraPotential {
+  background-image: url(https://afjeans.ar/wp-content/uploads/2022/09/A222210030-Remera-Potential-Coral.jpg);
 }
