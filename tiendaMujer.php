@@ -16,13 +16,11 @@
     <div class="encabezado">
         <img class="img" src="Assets/Imágenes/logo.png" alt="">
         <div class="nav">
-            <p class="efectoSubrayado leftToRight">Inicio</p>
-            <p class="efectoSubrayado leftToRight">Tienda</p>
-            <p class="efectoSubrayado leftToRight">Acerca de</p>
-            <p class="efectoSubrayado leftToRight">Contacto</p>
-            <a href=""><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
-            <button class="btnIniciarSesion">Iniciar sesión</button>
-
+            <a href="index.php"><p class="efectoSubrayado leftToRight">Inicio</p></a>
+            <a href="acercaDe.php"><p class="efectoSubrayado leftToRight">Acerca de</p></a>
+            <a href="contacto.php"><p class="efectoSubrayado leftToRight">Contacto</p></a>
+            <a href=""><img src="Assets/Imágenes/carritoFinal.png" alt="" ></a>
+            <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
         </div>
 
     </div>
@@ -32,7 +30,7 @@
     </div>
     <center>
         <div class="categorias">
-            <a href="" class="item-cat-mujer" id="remeras">
+            <a href="remerasMujer.php" class="item-cat-mujer" id="remeras">
                 <h1 id="texto"> Remeras </h1>
             </a>
             <a href="" class="item-cat-mujer" id="jeans">
