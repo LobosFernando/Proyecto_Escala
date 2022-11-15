@@ -52,11 +52,23 @@
         <div class="colores">
         <h3 id="colores">Colores</h3>
         <center>
-            <input type="image" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa" onclick="selecciona">
-            <input type="image" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" onclick="selecciona">
+            <input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa" onclick="selecciona(this, 'transparent', 'black', 'id1')">
+            <input type="image" id="color2" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" onclick="selecciona(this, 'transparent', 'black', 'id2')">
         </center>
         <hr>
         </div>
+        <div class="cantidad">
+        <h3 id="cantidad">Cantidad</h3>
+        <center>
+            <input id="btnCant" type="number" value="1" name="" id="">
+        </center>
+        <hr>
+        </div>
+        <center>
+        <div class="comprar">
+            <input class="btnComprar" type="submit" value="COMPRAR">
+        </div>
+        </center>
     </div>
         
     </div>

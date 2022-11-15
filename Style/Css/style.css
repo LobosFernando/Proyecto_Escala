@@ -394,8 +394,31 @@ hr {
 .coloresImg:hover{
   border-color: black;
 }
-#talles, #colores {
+#talles, #colores, #cantidad {
   margin-left: 5%;
+}
+#btnCant {
+  width: 50px;
+  height: 30px;
+}
+.btnComprar {
+  margin-top: 20px;
+  width: 125px;
+  height: 40px;
+  background-color: rgb(92, 92, 92);
+  color: white;
+  border-radius: 2em;
+  border: none;
+  outline: 2px solid rgb(92, 92, 92);
+  outline-offset: 3px;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.btnComprar:hover {
+  background-color: black;
+  color: #fff;
 }
 #texto {
   background-color: red;
