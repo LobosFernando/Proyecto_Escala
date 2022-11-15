@@ -365,6 +365,29 @@ h1 {
   -webkit-filter: blur(5px);
          filter: blur(5px);
 }
+.detalle {
+  width: 400px;
+  height: 600px;
+  float: right;
+  margin-left: 400px;
+  position:absolute;
+  border-top: 1px solid rgb(197, 197, 197);
+  border-bottom: 1px solid rgb(197, 197, 197);
+  border-right: 1px solid rgb(197, 197, 197);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.descripcion {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 5%;
+}
+
+hr {
+  border: 0,5px solid rgb(197, 197, 197);
+}
+#talles, #colores {
+  margin-left: 5%;
+}
 #texto {
   background-color: red;
   margin-top: 100%;
@@ -385,11 +408,11 @@ h1 {
   background-image: url(https://afjeans.ar/wp-content/uploads/2022/08/A222230001-Campera-Fantastic.jpg);
 }
 .remeraStars {
-  width: 500px;
-  height: 700px;
+  width: 400px;
+  height: 600px;
   background-size: cover;
   margin-top: 50px;
-  margin-left: 130px;
+  margin-left: 300px;
 }
 #remeraStars {
   background-image: url(https://afjeans.ar/wp-content/uploads/2022/08/A122210010-Remera-Stars-RosaLavanda.jpg);

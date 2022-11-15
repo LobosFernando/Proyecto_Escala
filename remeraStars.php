@@ -29,5 +29,32 @@
 
     </div>
     <div class="remeraStars" id="remeraStars">
+    <div class="detalle">
+        <center><h2 class="descripcion"> Remera de jersey color rosa manga corta con cuello y puños en color lavanda y estampa 
+            “MADE OF STARS” en delantero, también en color lavanda.</h2></center>
+            <hr></hr>
+        <div class="talles">
+            <h3 id="talles">Talles</h3>
+            <center>
+            <input type="radio" name="talles" id="talles">
+            <label for="talles">S</label>
+            <input type="radio" name="talles" id="talles">
+            <label for="talles">M</label>
+            <input type="radio" name="talles" id="talles">
+            <label for="talles">L</label>
+            <input type="radio" name="talles" id="talles">
+            <label for="talles">XL</label>
+            <input type="radio" name="talles" id="talles">
+            <label for="talles">XXL</label>
+            </center>
+        </div>
+        <hr>
+        <div class="colores">
+        <h3 id="colores">Colores</h3>
+        <center>
+            <input type="image" src="rosa.jpg" alt="">
+        </center>
+        </div>
+    </div>
         
     </div>
