@@ -52,8 +52,10 @@
         <div class="colores">
         <h3 id="colores">Colores</h3>
         <center>
-            <input type="image" src="rosa.jpg" alt="">
+            <input type="image" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa" onclick="selecciona">
+            <input type="image" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" onclick="selecciona">
         </center>
+        <hr>
         </div>
     </div>
         
