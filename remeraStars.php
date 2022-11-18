@@ -13,17 +13,7 @@
 </head>
 
 <body>
-    <div class="encabezado">
-        <img class="img" src="Assets/Imágenes/logo.png" alt="">
-        <div class="nav">
-            <a href="index.php"><p class="efectoSubrayado leftToRight">Inicio</p></a>
-            <a href="acercaDe.php"><p class="efectoSubrayado leftToRight">Acerca de</p></a>
-            <a href="contacto.php"><p class="efectoSubrayado leftToRight">Contacto</p></a>
-            <a href=""><img src="Assets/Imágenes/carritoFinal.png" alt="" ></a>
-            <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
-        </div>
-
-    </div>
+    <?php include 'encabezado.php'; ?>
     <div class="titulo-tienda">
         <h1>Remera Stars</h1>
 
@@ -52,8 +42,10 @@
         <div class="colores">
         <h3 id="colores">Colores</h3>
         <center>
-            <input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa" onclick="selecciona(this, 'transparent', 'black', 'id1')">
-            <input type="image" id="color2" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" onclick="selecciona(this, 'transparent', 'black', 'id2')">
+            <input type="radio" name="color">
+            <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa"></label>
+            <input type="radio" name="color">
+            <label for="color"><input type="image" id="color2" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" ></label>
         </center>
         <hr>
         </div>
@@ -68,7 +60,35 @@
         <div class="comprar">
             <input class="btnComprar" type="submit" value="COMPRAR">
         </div>
-        </center>
+        <p onclick="muestraTabla('visible')" class="efectoSubrayado2 leftToRight2">Visualizar tabla de talles</p>
+        <table id="tablaTalles">
+            <tr>
+                <th>Talle</th>
+                <th>Largo</th>
+                <th>Ancho</th>
+            </tr>
+            <?php
+            $conn = new mySqli('localhost', 'root', '', 'bdescala');
+            $sql="SELECT * FROM talles";
+            $result=mysqli_query($conn, $sql);
+            while ($mostrar=mysqli_fetch_array($result)){
+                ?>
+                <tr>
+                    <td><?php echo $mostrar['talle']?></td>
+                    <td><?php echo $mostrar['largo']?></td>
+                    <td><?php echo $mostrar['ancho']?></td>
+
+                </tr>
+                <?php
+            }
+            ?>
+            
+            
+        </table>
     </div>
         
     </div>
+    <?php include 'footer.php'; ?>
+    
+</body>
+</html>
