@@ -25,9 +25,11 @@
                 <button type="button" class="btnIniciarSesion" data-bs-toggle="dropdown">
                     <p><?php echo $_SESSION['usuario'] ?>
                 </button>
-                <ul class="dropdown-menu" <li><a class="dropdown-item" href="perfil.php">Editar perfil</a></li>
-                    <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
                 </ul>
+
             </div>
     </div>
 <?php } else { ?>
