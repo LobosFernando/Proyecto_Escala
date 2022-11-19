@@ -77,6 +77,9 @@
                         $sql="SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' && contraseña='$contraseña' ";
                         $result=mysqli_query($conn, $sql);
                         if ($result->num_rows>0){
+                            session_start();
+                            $_SESSION['usuario'] = $usuario;
+                            $_SESSION['contraseña']   = $contraseña;
                             header("Location: index.php");
                             exit();
                         }
