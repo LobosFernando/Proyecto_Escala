@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,18 +13,18 @@
 </head>
 
 <body>
-<?php include 'encabezado.php'; ?>
+    <?php include 'encabezado.php'; ?>
 
     <div id="carrusel-contenido">
         <div id="carrusel-caja">
             <div class="carrusel-elemento">
-                <img class="imagenes" src="Assets/Imágenes/imagen1.jpg" >
+                <img class="imagenes" src="Assets/Imágenes/imagen1.jpg">
             </div>
-            <div class="carrusel-elemento">   
+            <div class="carrusel-elemento">
                 <img class="imagenes" src="Assets/Imágenes/imagen2.jpg">
             </div>
-            <div class="carrusel-elemento">   
-                <img class="imagenes" src="Assets/Imágenes/imagen3.jpg">                        
+            <div class="carrusel-elemento">
+                <img class="imagenes" src="Assets/Imágenes/imagen3.jpg">
             </div>
         </div>
 
@@ -35,7 +35,7 @@
             <h1 style="color:white ;">Comprá ahora</h1>
         </center>
         <div class="tiendaMujer">
-            
+
             <a href="tiendaMujer.php"><img class="imgTiendaMujer" src="Assets/Imágenes/tiendamujer.jpg" alt=""></a>
             <div class="textoEncima">Ir a la tienda de mujer</div>
 
