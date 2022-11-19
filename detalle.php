@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style\Css\style.css">
-    <link rel="stylesheet" href="fontello.css">
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <title>Remeras Stars</title>
-</head>
-
-<body>
-    <?php include 'encabezado.php'; ?>
-
-    <?php include 'Conexion.php' ;
-    $sql2= "SELECT * FROM productos WHERE codProducto='1'";
-    $resultado=mysqli_query($conn, $sql2);
-    while ($escribir=mysqli_fetch_array($resultado)){ ?>
-    <div class="titulo-tienda">
-        <h1><?php echo $escribir['nombreProducto'] ?></h1>
-
-    </div>
-    <div class="remeraStars" id="remeraJustina">
-    <div class="detalle">
+<div class="detalle">
         <center><h2 class="descripcion"><?php echo $escribir['comentarios'] ?></h2></center> 
         <center><h1>$<?php echo $escribir['precio']?></h1></center>
         <?php 
@@ -49,9 +23,8 @@
         <h3 id="colores">Colores</h3>
         <center>
             <input type="radio" name="color">
-            <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa"></label>
-            <input type="radio" name="color">
-            <label for="color"><input type="image" id="color2" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" ></label>
+            <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/crudo.jpg" alt="Crudo"></label>
+            
         </center>
         <hr>
         </div>
@@ -92,9 +65,3 @@
             
         </table>
     </div>
-        
-    </div>
-    <?php include 'footer.php'; ?>
-    
-</body>
-</html>

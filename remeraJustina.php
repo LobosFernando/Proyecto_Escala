@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <title>Remeras Stars</title>
+    <title>Remera Justina</title>
 </head>
-
 <body>
     <?php include 'encabezado.php'; ?>
-
     <?php include 'Conexion.php' ;
-    $sql2= "SELECT * FROM productos WHERE codProducto='1'";
+    $sql2= "SELECT * FROM productos WHERE codProducto='2'";
     $resultado=mysqli_query($conn, $sql2);
     while ($escribir=mysqli_fetch_array($resultado)){ ?>
     <div class="titulo-tienda">
@@ -49,9 +47,8 @@
         <h3 id="colores">Colores</h3>
         <center>
             <input type="radio" name="color">
-            <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/rosa.jpg" alt="Rosa"></label>
-            <input type="radio" name="color">
-            <label for="color"><input type="image" id="color2" class="coloresImg" src="Assets/Imágenes/lila.jpg" alt="Lavanda" ></label>
+            <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/crudo.jpg" alt="Crudo"></label>
+            
         </center>
         <hr>
         </div>
@@ -92,7 +89,7 @@
             
         </table>
     </div>
-        
+    
     </div>
     <?php include 'footer.php'; ?>
     

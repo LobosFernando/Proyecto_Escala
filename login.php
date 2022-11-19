@@ -1,28 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="encabezado">
-      <center>  <img class="img" src="logo.png" alt=""></center>   
-</div>
-<div class="recuadroLogin">
-<form action="" method="post" class="form"></form>
-    <center><b><p>Iniciar sesión</p></b></center>
-    <p>Nombre de usuario: <input type="text" name="" id="cajaUser" class="cajas"> </p>
-    <p>Contraseña:<input type="password" name="" id="cajaPass" class="cajas"> </p>
-    <center><button class="btnIniciar" type="submit">Iniciar sesión</button></center>
-    <a  href="register.html">No tengo cuenta, registrarme</a>
-    <a  href="recuperacion.html">Olvidé mi contraseña</a>
-    <?php 
+<!-- Define que el documento esta bajo el estandar de HTML 5 -->
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+    
+    <head>
         
-    ?>
-</form>
-</div> 
-</body>
+        <meta charset="utf-8">
+        
+        <title> Formulario Login </title>    
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Videojuegos & Desarrollo">
+        <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
+        <meta name="keywords" content="login,formulariode acceso html">
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        
+        <!-- Link hacia el archivo de estilos css -->
+        <link rel="stylesheet" href="login.css">
+        
+        <style type="text/css">
+            
+        </style>
+        
+        <script type="text/javascript">
+        
+        </script>
+        
+    </head>
+    
+    <body>
+        <div class="encabezado">
+            <center>  <img class="img" src="Assets/Imágenes/logo.png" alt=""></center>   
+        </div>
+        <div id="contenedor">
+            
+            <div id="contenedorcentrado">
+                <div id="login">
+                    <form id="loginform">
+                        <label for="usuario">Usuario</label>
+                        <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                        
+                        <label for="password">Contraseña</label>
+                        <input id="password" type="password" placeholder="Contraseña" name="password" required>
+                        
+                        <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                    </form>
+                    
+                </div>
+                <div id="derecho">
+                    <div class="titulo">
+                        Bienvenido
+                    </div>
+                    <hr>
+                    <div class="pie-form">
+                        <a href="recuperacion.php">¿Perdiste tu contraseña?</a>
+                        <a href="register.PHP">¿No tienes Cuenta? Registrate</a>
+                        <hr>
+                        <a href="index.php">« Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 </html>

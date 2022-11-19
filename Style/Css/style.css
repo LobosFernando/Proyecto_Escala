@@ -368,7 +368,7 @@ h1 {
 }
 .detalle {
   width: 500px;
-  height: 700px;
+  height: 750px;
   float: right;
   margin-left: 500px;
   position:absolute;
@@ -442,7 +442,7 @@ hr {
 }
 .remeraStars {
   width: 500px;
-  height: 700px;
+  height: 750px;
   background-size: cover;
   margin-top: 50px;
   margin-bottom: 50px;
