@@ -39,7 +39,8 @@
             
             <div id="contenedorcentrado">
                 <div id="login">
-                    <form id="loginform">
+                    <form id="loginform" method="POST" action="login.php">
+                        
                         <label for="usuario">Usuario</label>
                         <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
                         
@@ -47,6 +48,9 @@
                         <input id="password" type="password" placeholder="Contraseña" name="password" required>
                         
                         <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                        
+                        
+                        
                     </form>
                     
                 </div>
@@ -64,6 +68,20 @@
                 </div>
             </div>
         </div>
-        
+        <?php
+                        if(isset($_POST["usuario"])){
+
+                        $usuario=$_POST['usuario'];
+                        $contraseña= $_POST ['password']; 
+                        include 'Conexion.php'; 
+                        $sql="SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' && contraseña='$contraseña' ";
+                        $result=mysqli_query($conn, $sql);
+                        if ($result->num_rows>0){
+                            header("Location: index.php");
+                            exit();
+                        }
+                        else echo 'error';
+                    }
+                        ?>
     </body>
 </html>
