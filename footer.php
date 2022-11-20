@@ -1,13 +1,20 @@
 <html>
-    <div class="footer">
-        <p style="color:white; margin-left: 550px;font-size: 25px; padding-top: 25px; ">SEGUINOS EN:      <img class="imgRedes" src="Assets/Imágenes/image.png" alt="">          <img class="imgRedes" src="Assets/Imágenes/image (1).png" alt=""> </p>
-        <div class="contieneEnlaces">
-            <a class="enlacesFooter" href="">SOBRE NOSOTROS</a>
-            <a class="enlacesFooter" href="">PREGUNTAS FRECUENTES</a>
-            <a class="enlacesFooter" href="">PAGO Y ENVÍO</a>
-            <a class="enlacesFooter" href="">POLÍTICAS DE CAMBIO</a>
-
-        </div>
+<div class="footer">
+    <center>
+        <p style="color:white; font-size: 25px; padding-top: 25px; margin-left:550px "><a href="https://www.instagram.com/escalaindumentaria"><img class="imgRedes" src="Assets/Imágenes/image.png"></a>
+            <a href=https://es-la.facebook.com/ESCALAindumentaria/""><img class="imgRedes" src="Assets/Imágenes/image (1).png" alt=""></a>
+        </p>
+         <br>
+    </center>
+    <br>
+    <div class="contieneEnlaces">
+        <a class="enlacesFooter" href="acercaDe.php">SOBRE NOSOTROS</a>
+        <a class="enlacesFooter" href="preguntasFrecuentes.php">PREGUNTAS FRECUENTES</a>
+        <a class="enlacesFooter" href="pagoYEnvio.php">PAGO Y ENVÍO</a>
+        <a class="enlacesFooter" href="politicaCambio.php">POLÍTICAS DE CAMBIO</a>
 
     </div>
+
+</div>
+
 </html>

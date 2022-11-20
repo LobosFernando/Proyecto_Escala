@@ -17,7 +17,7 @@
         <a href="contacto.php">
             <p class="efectoSubrayado leftToRight">Contacto</p>
         </a>
-        <a href=""><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
+        <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
         <?php
         if (isset($_SESSION['usuario'])) { ?>
 

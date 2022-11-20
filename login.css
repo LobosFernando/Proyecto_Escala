@@ -42,6 +42,9 @@ body {
     background-position: center;
     background-size: cover;
 }
+.imgEscala {
+    width: 100%;
+  }
 
 /* contenedor del login a la izquierda */
 #contenedorcentrado {
@@ -70,6 +73,9 @@ body {
     padding: 30px;
     box-sizing: border-box;
 }
+.label {
+    color: white !important;
+}
 
 /* formulario de login */
 /* formulario de login */
@@ -77,6 +83,26 @@ body {
     width: 100%;
     max-width: 320px;
     min-width: 320px;
+    padding: 30px 30px 50px 30px;
+    background-color: #719192;
+    
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    box-sizing: border-box;
+    
+    opacity: 1;
+    filter: alpha(opacity=1);
+}
+#loginE {
+    width: 100%;
+    max-width: 420px;
+    min-width: 420px;
     padding: 30px 30px 50px 30px;
     background-color: #719192;
     
