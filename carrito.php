@@ -22,6 +22,7 @@
             $resultado = mysqli_query($conn, $sql2);
             $data = mysqli_fetch_assoc($resultado);
             $codProducto = $data["codProducto"];
+            $nombreProducto = $data["nombreProducto"];
             $precio = $data["precio"];
             $cantidad = $_POST["cantidad"];
             $precioTotal = $precio * $cantidad;
@@ -30,21 +31,38 @@
             $nombreDeUsuario = $_SESSION['usuario'];
 
             include 'Conexion.php';
-            $sql = "INSERT INTO ventasproductos (codProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
-        VALUES ('$codProducto', '$talle', '$cantidad', '$color', $precioTotal, $nombreDeUsuario)";
+            $sql = "INSERT INTO ventasproductos (codProducto, nombreProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
+        VALUES ('$codProducto', '$nombreProducto', '$talle', '$cantidad', '$color', '$precioTotal', '$nombreDeUsuario')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo 'chelo';
             } else echo 'error';
         }
-    }
-    else {
+    } else {
         header("Location: login.php");
-            exit();
+        exit();
     } ?>
     <h1>Carrito</h1>
+    <table id="tablaCarrito">
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+        <?php
+        include 'Conexion.php';
+        $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario=$nombreDeUsuario ";
+        $res = mysqli_query($conn, $sql);
+        while ($mostrar = mysqli_fetch_array($res)) {
+        ?>
+            <tr>
+                <td><?php echo $mostrar['nombreProducto'] ?></td>
+                <td><?php echo $mostrar['cantidad'] ?></td>
+                <td><?php echo $mostrar['precioTotal'] ?></td>
 
-
+            </tr>
+        <?php } ?>
+    </table>
 </body>
 
 </html>
