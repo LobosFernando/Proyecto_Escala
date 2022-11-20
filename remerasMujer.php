@@ -24,10 +24,10 @@
             <a href="remeraStars.php" class="item-cat-mujer" id="remeraStars">
               
             </a>
-            <a href="" class="item-cat-mujer" id="remeraJustina">
+            <a href="remeraJustina.php" class="item-cat-mujer" id="remeraJustina">
                
             </a>
-            <a href="" class="item-cat-mujer" id="remeraPositive">
+            <a href="remeraPositive.php" class="item-cat-mujer" id="remeraPositive">
                 
             </a>
             <a href="" class="item-cat-mujer" id="remeraPotential">

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <?php $cod = 2 ;
+    <?php $cod = 3 ;
     include 'Conexion.php';
     $sql2 = "SELECT * FROM productos WHERE codProducto= $cod";
     $resultado = mysqli_query($conn, $sql2);
@@ -24,7 +24,7 @@
         <div class="titulo-tienda">
             <h1><?php echo $escribir['nombreProducto'] ?></h1>
         </div>
-        <div class="remeraStars" id="remeraJustina">
+        <div class="remeraStars" id="remeraPositive">
             <div class="detalle">
                 <center>
                     <h2 class="descripcion"><?php echo $escribir['comentarios'] ?></h2>
@@ -57,8 +57,8 @@
                 <div class="colores">
                     <h3 id="colores">Colores</h3>
                     <center>
-                        <input type="radio" name="color" id="color" value="crudo">
-                        <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/crudo.jpg" alt="Crudo"></label>
+                        <input type="radio" name="color" id="color" value="verde agua">
+                        <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/verdeagua.jpg" alt="Crudo"></label>
 
                     </center>
                     <hr>
@@ -69,7 +69,8 @@
                         <input id="btnCant" type="number" aria-valuemin="1" name="cantidad" id="cantidad">
                     </center>
                     <hr>
-                    <input type="number" name="cod" id="cod" class= "cod" value="2">
+                    <input type="number" name="cod" id="cod" class= "cod" value="3"> 
+                    <!-- setea cod -->
                 </div>
                 <center>
                     <div class="comprar">

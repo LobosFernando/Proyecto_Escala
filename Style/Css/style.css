@@ -422,7 +422,7 @@ hr {
   height: 30px;
 }
 .btnComprar {
-  margin-top: 20px;
+  margin-top: -30px;
   width: 125px;
   height: 40px;
   background-color: rgb(92, 92, 92);
@@ -435,6 +435,7 @@ hr {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  margin-bottom: 10px;
 }
 .btnComprar:hover {
   background-color: black;
@@ -481,11 +482,14 @@ hr {
 }
 #tablaTalles {
   border-collapse: collapse; 
-  margin: 25px 0; 
-  font-size: 1em; 
+  margin: 3px 0; 
+  font-size: 0.8em; 
   font-family: sans-serif; 
   min-width: 100%; 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+  visibility: hidden;
+}
+.cod {
   visibility: hidden;
 }
 #tablaTalles th { background-color: #980081; color: #ffffff; text-align: middle; }
