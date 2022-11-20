@@ -11,7 +11,7 @@
 
 <body>
     <?php
-
+    $total=0;
     include 'encabezado.php';
     if (isset($_SESSION['usuario'])) {
 
@@ -34,15 +34,13 @@
             $sql = "INSERT INTO ventasproductos (codProducto, nombreProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
         VALUES ('$codProducto', '$nombreProducto', '$talle', '$cantidad', '$color', '$precioTotal', '$nombreDeUsuario')";
             $result = mysqli_query($conn, $sql);
-            if ($result) {
-                echo 'chelo';
-            } else echo 'error';
         }
     } else {
         header("Location: login.php");
         exit();
     } ?>
     <h1>Carrito</h1>
+    <center>
     <table id="tablaCarrito">
         <tr>
             <th>Producto</th>
@@ -51,18 +49,29 @@
         </tr>
         <?php
         include 'Conexion.php';
-        $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario=$nombreDeUsuario ";
+        $nombreDeUsuario = $_SESSION['usuario'];
+        $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario='$nombreDeUsuario' ";
         $res = mysqli_query($conn, $sql);
         while ($mostrar = mysqli_fetch_array($res)) {
         ?>
             <tr>
+
                 <td><?php echo $mostrar['nombreProducto'] ?></td>
                 <td><?php echo $mostrar['cantidad'] ?></td>
-                <td><?php echo $mostrar['precioTotal'] ?></td>
-
+                <td><?php echo '$'. $mostrar['precioTotal']?></td>
+                <?php $total=$total+$mostrar['precioTotal']?>
             </tr>
         <?php } ?>
+        <tr>
+            <td id="total">Total:</td>
+            <td id="total"></td>
+            <td id="total"><?php echo '$'. $total?></td>
+        </tr>
     </table>
+    <br>
+    <input type="button" value="Finalizar compra"><a href="cerrarcompra.php"></a></input>
+    <input type="button" value="Seguir comprando"><a href="tiendaMujer.php"></a></input>
+    </center>
 </body>
 
 </html>

@@ -489,6 +489,19 @@ hr {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
   visibility: hidden;
 }
+#tablaCarrito {
+  border-collapse: collapse; 
+  margin: 3px 0; 
+  font-size: 0.8em; 
+  font-family: sans-serif; 
+  min-width: 40%; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+}
+#tablaCarrito th { background-color: #980081; color: #ffffff; text-align: middle; }
+#tablaCarrito th { padding: 12px 15px; }
+#tablaCarrito  tbody tr { border-bottom: 1px solid #dddddd; }
+#tablaCarrito tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
+#tablaCarrito tbody tr:last-of-type { border-bottom: 2px solid #009879; }
 .cod {
   visibility: hidden;
 }
@@ -497,6 +510,7 @@ hr {
 #tablaTalles  tbody tr { border-bottom: 1px solid #dddddd; }
 #tablaTalles tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
 #tablaTalles tbody tr:last-of-type { border-bottom: 2px solid #009879; }
+#total { background-color: yellow;}
 .efectoSubrayado2 {
   display: inline-block;
   position: relative;
