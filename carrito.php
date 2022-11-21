@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/Css/style.css">
+    <script src="script.js"></script>
     <title>Carrito</title>
 </head>
 
@@ -13,7 +14,7 @@
     <?php
     $total = 0;
     $tr = 1;
-    $cod=0;
+    $cod = 0;
     include 'encabezado.php';
     if (isset($_SESSION['usuario'])) {
 
@@ -31,6 +32,7 @@
             $talle = $_POST["talles"];
             $color = $_POST["color"];
             $nombreDeUsuario = $_SESSION['usuario'];
+            $idventaproducto= $data['idVentasProductos'] ;
 
             include 'Conexion.php';
             $sql = "INSERT INTO ventasproductos (codProducto, nombreProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
@@ -63,11 +65,13 @@
                         <td><?php echo $mostrar['nombreProducto'] ?></td>
                         <td><?php echo $mostrar['cantidad'] ?></td>
                         <td><?php echo '$' . $mostrar['precioTotal'] ?></td>
+                        <input type="text" name="text" id="" value="<?php echo $mostrar['idVentasProductos']?>">
                         <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php $mostrar['idVentasProductos']?>"></td>
                         <?php $total = $total + $mostrar['precioTotal'];
                         $tr++; ?>
                     </tr>
                 <?php } ?>
+                
                 <tr>
                     <td id="total">Total:</td>
                     <td id="total"></td>
@@ -80,19 +84,19 @@
         <br>
         <input type="button" value="Finalizar compra"><a href="cerrarcompra.php"></a></input>
         <input type="button" value="Seguir comprando"><a href="tiendaMujer.php"></a></input>
-        <?php
+        <!-- <?php
         if (isset($_POST['eliminar'])) {
             include 'Conexion.php';
-            $sql= "DELETE FROM ventasproductos WHERE idVentasProductos = ";
-            $res=mysqli_query($conn, $sql);
-            if ($res){
-                echo 'eliminado';
+            $idventaproducto= $_POST['text'];
+                $sql = "DELETE FROM ventasproductos WHERE idVentasProductos = $idventaproducto";
+                $res = mysqli_query($conn, $sql);
+                if ($res) {
+                    echo 'eliminado';
+                } else {
+                    echo 'error';
+                }
             }
-            else {
-                echo 'error';
-            }
-        }
-        ?>
+        ?> -->
     </center>
 </body>
 
