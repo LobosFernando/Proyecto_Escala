@@ -11,7 +11,8 @@
 
 <body>
     <?php
-    $total=0;
+    $total = 0;
+    $tr = 1;
     include 'encabezado.php';
     if (isset($_SESSION['usuario'])) {
 
@@ -41,36 +42,48 @@
     } ?>
     <h1>Carrito</h1>
     <center>
-    <table id="tablaCarrito">
-        <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-        </tr>
-        <?php
-        include 'Conexion.php';
-        $nombreDeUsuario = $_SESSION['usuario'];
-        $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario='$nombreDeUsuario' ";
-        $res = mysqli_query($conn, $sql);
-        while ($mostrar = mysqli_fetch_array($res)) {
-        ?>
-            <tr>
+        <table id="tablaCarrito">
+            <form action="carrito.php" method="post">
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th></th>
+                </tr>
+                <?php
+                include 'Conexion.php';
+                $nombreDeUsuario = $_SESSION['usuario'];
+                $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario='$nombreDeUsuario' ";
+                $res = mysqli_query($conn, $sql);
+                while ($mostrar = mysqli_fetch_array($res)) {
+                ?>
+                    <tr>
 
-                <td><?php echo $mostrar['nombreProducto'] ?></td>
-                <td><?php echo $mostrar['cantidad'] ?></td>
-                <td><?php echo '$'. $mostrar['precioTotal']?></td>
-                <?php $total=$total+$mostrar['precioTotal']?>
-            </tr>
-        <?php } ?>
-        <tr>
-            <td id="total">Total:</td>
-            <td id="total"></td>
-            <td id="total"><?php echo '$'. $total?></td>
-        </tr>
-    </table>
-    <br>
-    <input type="button" value="Finalizar compra"><a href="cerrarcompra.php"></a></input>
-    <input type="button" value="Seguir comprando"><a href="tiendaMujer.php"></a></input>
+                        <td><?php echo $mostrar['nombreProducto'] ?></td>
+                        <td><?php echo $mostrar['cantidad'] ?></td>
+                        <td><?php echo '$' . $mostrar['precioTotal'] ?></td>
+                        <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value=""></td>
+                        <?php $total = $total + $mostrar['precioTotal'];
+                        $tr++; ?>
+                    </tr>
+                <?php } ?>
+                <tr>
+                    <td id="total">Total:</td>
+                    <td id="total"></td>
+                    <td id="total"><?php echo '$' . $total ?></td>
+                    <td id="total"></td>
+                </tr>
+            </form>
+
+        </table>
+        <br>
+        <input type="button" value="Finalizar compra"><a href="cerrarcompra.php"></a></input>
+        <input type="button" value="Seguir comprando"><a href="tiendaMujer.php"></a></input>
+        <?php
+        if (isset($_POST['eliminar'])) {
+            
+        }
+        ?>
     </center>
 </body>
 

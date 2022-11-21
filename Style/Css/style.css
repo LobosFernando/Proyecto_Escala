@@ -550,3 +550,15 @@ hr {
 
   box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
 }
+.eliminar {
+width: 25px;
+height: 25px;
+
+}
+.eliminari {
+  border: 0;
+  width: 25px;
+  height: 25px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/216/216658.png');
+  background-size: cover;
+  }

@@ -46,7 +46,7 @@
                         //button, mientras existan
                         $resultado = mysqli_query($conn, $sql3);
                         while ($escribir = mysqli_fetch_array($resultado)) { ?>
-                            <input type="radio" name="talles" id="talles" value=<?php echo $escribir['talle'] ?>>
+                            <input checked type="radio" name="talles" id="talles" value=<?php echo $escribir['talle'] ?>>
                             <label for="talles"><?php echo $escribir['talle'] ?></label>
                         <?php
                         }
@@ -57,7 +57,7 @@
                 <div class="colores">
                     <h3 id="colores">Colores</h3>
                     <center>
-                        <input type="radio" name="color" id="color" value="crudo">
+                        <input checked type="radio" name="color" id="color" value="crudo">
                         <label for="color"><input type="image" id="color1" class="coloresImg" src="Assets/Imágenes/crudo.jpg" alt="Crudo"></label>
 
                     </center>
@@ -66,7 +66,7 @@
                 <div class="cantidad">
                     <h3 id="cantidad">Cantidad</h3>
                     <center>
-                        <input id="btnCant" type="number" aria-valuemin="1" name="cantidad" id="cantidad">
+                        <input id="btnCant" type="number" min="1" name="cantidad" id="cantidad" value="1">
                     </center>
                     <hr>
                     <input type="number" name="cod" id="cod" class= "cod" value="2">
