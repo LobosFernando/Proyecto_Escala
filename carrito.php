@@ -13,11 +13,12 @@
 <body>
     <?php
     $total = 0;
-    $tr = 1;
+    
     $cod = 0;
+
     include 'encabezado.php';
     if (isset($_SESSION['usuario'])) {
-
+        $idventaproducto = 0;
         if (isset($_POST["comprar"])) {
             include 'Conexion.php';
             $cod = $_POST["cod"];
@@ -32,7 +33,7 @@
             $talle = $_POST["talles"];
             $color = $_POST["color"];
             $nombreDeUsuario = $_SESSION['usuario'];
-            $idventaproducto= $data['idVentasProductos'] ;
+            
 
             include 'Conexion.php';
             $sql = "INSERT INTO ventasproductos (codProducto, nombreProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
@@ -59,16 +60,16 @@
                 $sql = "SELECT * FROM ventasproductos WHERE nombreDeUsuario='$nombreDeUsuario' ";
                 $res = mysqli_query($conn, $sql);
                 while ($mostrar = mysqli_fetch_array($res)) {
+                    $idventaproducto = $mostrar['idVentasProductos'];
                 ?>
                     <tr>
 
                         <td><?php echo $mostrar['nombreProducto'] ?></td>
                         <td><?php echo $mostrar['cantidad'] ?></td>
                         <td><?php echo '$' . $mostrar['precioTotal'] ?></td>
-                        <input type="text" name="text" id="" value="<?php echo $mostrar['idVentasProductos']?>">
-                        <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php echo $mostrar['idVentasProductos']?>"></td>
-                        <?php $total = $total + $mostrar['precioTotal'];
-                        $tr++; ?>
+
+                        <td class="eliminar"><input type="submit" name="eliminar<?php $mostrar['idVentasProductos']?>" class="eliminari" value="<?php echo $mostrar['idVentasProductos']?>"></td>
+                        <?php $total = $total + $mostrar['precioTotal'];?>
                     </tr>
                 <?php } ?>
                 
@@ -82,19 +83,15 @@
 
         </table>
         <br>
-        <input type="button" value="Finalizar compra"><a href="cerrarcompra.php"></a></input>
-        <input type="button" value="Seguir comprando"><a href="tiendaMujer.php"></a></input>
+        <a href="cerrarcompra.php"><input type="button" value="Finalizar compra"></a>
+        <a href="tiendaMujer.php"><input type="button" value="Seguir comprando"></a>
         <!-- <?php
-        if (isset($_POST['eliminar'])) {
+        if (isset($_POST['eliminar'.$mostrar['idVentasProducto']])) {
             include 'Conexion.php';
-            $idventaproducto= $_POST['text'];
+            $idventaproducto= $_POST['eliminar'.$mostrar['idVentasProducto']];
                 $sql = "DELETE FROM ventasproductos WHERE idVentasProductos = $idventaproducto";
                 $res = mysqli_query($conn, $sql);
-                if ($res) {
-                    echo 'eliminado';
-                } else {
-                    echo 'error';
-                }
+                
             }
         ?> -->
     </center>
