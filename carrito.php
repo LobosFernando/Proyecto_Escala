@@ -66,7 +66,7 @@
                         <td><?php echo $mostrar['cantidad'] ?></td>
                         <td><?php echo '$' . $mostrar['precioTotal'] ?></td>
                         <input type="text" name="text" id="" value="<?php echo $mostrar['idVentasProductos']?>">
-                        <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php $mostrar['idVentasProductos']?>"></td>
+                        <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php echo $mostrar['idVentasProductos']?>"></td>
                         <?php $total = $total + $mostrar['precioTotal'];
                         $tr++; ?>
                     </tr>
