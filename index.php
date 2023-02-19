@@ -44,7 +44,7 @@
             <a href="tiendaHombres.php"><img class="imgTiendaHombre" src="Assets/Imágenes/tiendahombre.jpg" alt=""></a>
             <div class="textoEncimaH">Ir a la tienda de hombre</div>
         </div>
-
+<a href="cargarProducto.php">Cargar producto</a>
     </div>
     <?php include 'footer.php'; ?>
 

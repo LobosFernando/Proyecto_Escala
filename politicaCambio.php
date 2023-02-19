@@ -8,7 +8,7 @@
 
     <meta charset="utf-8">
 
-    <title>OPolíticas de cambio</title>
+    <title>Políticas de cambio</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
