@@ -12,19 +12,14 @@
 
 <body>
     <?php
-    $total = 0;
     
-    $cod = 0;
 
     include 'encabezado.php';
     if (isset($_SESSION['usuario'])) {
         $idventaproducto = 0;
         if (isset($_POST["comprar"])) {
             include 'Conexion.php';
-            $cod = $_POST["cod"];
-            $sql2 = "SELECT * FROM productos WHERE codProducto= $cod";
-            $resultado = mysqli_query($conn, $sql2);
-            $data = mysqli_fetch_assoc($resultado);
+            
             $codProducto = $data["codProducto"];
             $nombreProducto = $data["nombreProducto"];
             $precio = $data["precio"];
@@ -36,8 +31,8 @@
             
 
             include 'Conexion.php';
-            $sql = "INSERT INTO ventasproductos (codProducto, nombreProducto, talle, cantidad, color, precioTotal, nombreDeUsuario)
-        VALUES ('$codProducto', '$nombreProducto', '$talle', '$cantidad', '$color', '$precioTotal', '$nombreDeUsuario')";
+            $sql = "INSERT INTO carrito (producto, cantidad, precio, usuario)
+        VALUES ('$_SESSION[nombreProd]', )";
             $result = mysqli_query($conn, $sql);
         }
     } else {
