@@ -23,7 +23,7 @@
     <center>
 
         <div class="categorias">
-            <form action="remeraHola.php" method="post">
+            <form action="y.php" method="post">
                 <?php
                 $sql = "SELECT * FROM prod WHERE categoria ='RemerasM'";
                 $r = mysqli_query($conn, $sql);

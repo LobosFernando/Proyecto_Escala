@@ -47,7 +47,7 @@
                         <td><?php echo $mostrar['usuario'] ?></td>
 
 
-                        <td class="eliminar"><input type="submit" name="eliminar<?php $mostrar['idCarrito'] ?>" class="eliminari" value="<?php echo $mostrar['idCarrito'] ?>"></td>
+                        <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php echo $mostrar['idCarrito'] ?>"></td>
                         <?php $total = $total + $mostrar['subtotal']; ?>
                     </tr>
                     <?php } ?>

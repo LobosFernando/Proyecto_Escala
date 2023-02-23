@@ -3,14 +3,7 @@
 <?php
 include 'Conexion.php';
 session_start();
-$_SESSION['prod']= $_POST['productoElegido'];
-echo $_POST['productoElegido'];
-// $sql= "SELECT * FROM prod WHERE nombreProd= '$_SESSION[prod]'";
-// $r= mysqli_query($conn, $sql);
 
-//   while ($row= mysqli_fetch_array($r))  {
-//     $cadena= $row['nombreProd'];
-// }
 error_reporting(0);
 ?>
 
@@ -61,7 +54,7 @@ error_reporting(0);
                     $resultado = mysqli_query($conn, $sql3);
                     $cantTalles=0;
                     while ($escribir = mysqli_fetch_array($resultado)) { ?>
-                        <label for="talles"><?php echo $escribir['talle'] ?> :</label>
+                        <label for="talles"><?php echo $escribir['talle'] ?>:</label>
                         <input type="number" name="talles<?php echo $cantTalles ?>" id="talles" min="0" max="<?php echo $escribir['cant']?>">
                         
                     <?php
@@ -78,7 +71,7 @@ error_reporting(0);
             <div class="colores">
                 <h3 id="colores">Colores</h3>
                 <center><?php
-                        $sql4 = "SELECT color FROM detalleproducto WHERE producto= '$_SESSION[prod]'";
+                        $sql4 = "SELECT DISTINCT color FROM detalleproducto WHERE producto= '$_SESSION[prod]'";
                         $r = mysqli_query($conn, $sql4);
                         while ($tall = mysqli_fetch_array($r)) { ?>
                         <input checked type="radio" name="color" value="<?php echo $tall['color'] ?>">
