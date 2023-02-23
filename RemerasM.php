@@ -13,37 +13,44 @@
 </head>
 
 <body>
-<?php include 'encabezado.php'; 
-include 'Conexion.php'?>
+    <?php include 'encabezado.php';
+    include 'Conexion.php' ?>
     <div class="titulo-tienda">
         <h1>Remeras/Mujer</h1>
 
     </div>
-    
+
     <center>
-            
-    <div class="categorias">
+
+        <div class="categorias">
+            <form action="remeraHola.php" method="post">
                 <?php
-            $sql= "SELECT * FROM prod WHERE categoria ='RemerasM'";
-        $r= mysqli_query($conn, $sql);
-        $i=0;
-        while ($i<4){
-            while ($row= mysqli_fetch_array($r)){ 
-                $sincortar= $row['nombreProd'];
-                $cadena = substr($sincortar, 0, -1);
-                $cadena2 =str_replace(' ', '', $sincortar);?>
-                <a href=" <?php echo $cadena2?>.php" class="item-cat-mujer"> 
-                <h1 id="texto"> <?php echo $cadena?>  </h1>
-                <img src="Assets/Imágenes/<?php echo $sincortar?>.jpg" alt="">
-                </a>
-                <?php
-            
-            }
-            $i++;
-        }
-        ?>
-        <br>
+                $sql = "SELECT * FROM prod WHERE categoria ='RemerasM'";
+                $r = mysqli_query($conn, $sql);
+                $i = 0;
+                while ($i < 4) {
+                    while ($row = mysqli_fetch_assoc($r)) {
+                        $sincortar = $row['nombreProd'];
+                        $cadena = substr($sincortar, 0, -1);
+                        $cadena2 = str_replace(' ', '', $sincortar);
+                         ?>
+                        <a href="remeraHola.php" class="item-cat-mujer">
+                            <h1 id="texto"> <?php echo $cadena ?> </h1>
+                            <img src="Assets/Imágenes/<?php echo $sincortar ?>.jpg" alt="">
+                            
+                    
+                        </a>
+                        <input type="submit" name="productoElegido" value= "<?php echo $sincortar?>" >
+                        <?php
+                    }
+                    $i++;?>
+                    
+                    <?php
+                }
+                ?>
+                <br>
         </div>
+        </form>
     </center>
     <a href="https://api.whatsapp.com/send?phone=543564589550" target="_blank" class="btn-wsp"> <i class="fa fa-whatsapp icono"></i></i></a>
     <?php include 'footer.php'; ?>
