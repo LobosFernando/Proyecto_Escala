@@ -1,22 +1,17 @@
 <?php 
+session_start();
 require 'vendor/autoload.php';
 MercadoPago\SDK::setAccessToken('TEST-1040330731403668-112123-1b16af8758f9cd4f1490ae6b4a60be99-254635608');
 $preference= new MercadoPago\Preference();
 $item= new MercadoPago\Item();
 $item->id=1;
-$item->title= 'ghj';
+$item->title= 'Productos';
 $item->quantity= 1;
-$item->unit_price= 6;
+$item->unit_price= $_SESSION['total'] ;
 $item->currency_id= "AR";
 
-$item2= new MercadoPago\Item();
-$item2->id=2;
-$item2->title= 'de';
-$item2->quantity= 1;
-$item2->unit_price= 16;
-$item2->currency_id= "AR";
 
-$preference->items= array($item, $item2);
+$preference->items= array($item);
 
 $preference->back_urls = array (
     "success" => "http://localhost:3000/captura.php",

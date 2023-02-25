@@ -39,12 +39,12 @@
                 ?>
                     <tr>
                     
-                        <td><?php echo $mostrar['producto'] ?></td>
-                        <td><?php echo $mostrar['color'] ?></td>
-                        <td><?php echo $mostrar['cantidad'] ?></td>
-                        <td><?php echo '$' . $mostrar['precio'] ?></td>
-                        <td><?php echo '$' . $mostrar['subtotal'] ?></td>
-                        <td><?php echo $mostrar['usuario'] ?></td>
+                        <td align="center"><?php echo $mostrar['producto'] ?></td>
+                        <td align="center"><canvas style="background-color: <?php echo $mostrar['color'] ?>;"></canvas></td>
+                        <td align="center"><?php echo $mostrar['cantidad'] ?></td>
+                        <td align="center"><?php echo '$' . $mostrar['precio'] ?></td>
+                        <td align="center"><?php echo '$' . $mostrar['subtotal'] ?></td>
+                        <td align="center"><?php echo $mostrar['usuario'] ?></td>
 
 
                         <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php echo $mostrar['idCarrito'] ?>"></td>
@@ -58,8 +58,8 @@
                         <td id="total">Total:</td>
                         <td id="total"></td>
                         <td id="total"></td>
-                        <td id="total"><?php echo '$' . $total ?></td>
                         <td id="total"></td>
+                        <td align="center" id="total"><?php echo '$' . $total ?></td>
                         <td id="total"></td>
                         <td id="total"></td>
                     </tr>
