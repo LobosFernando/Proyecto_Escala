@@ -33,9 +33,9 @@
                 $sql = "SELECT * FROM carrito WHERE usuario='$nombreDeUsuario' ";
                 $res = mysqli_query($conn, $sql);
                 $total = 0;
-                
+                $arrayIds= array();
                 while ($mostrar = mysqli_fetch_array($res)) {
-
+                    $arrayIds[]= $mostrar['producto'];
                 ?>
                     <tr>
                     
@@ -48,9 +48,11 @@
 
 
                         <td class="eliminar"><input type="submit" name="eliminar" class="eliminari" value="<?php echo $mostrar['idCarrito'] ?>"></td>
-                        <?php $total = $total + $mostrar['subtotal']; ?>
+                        <?php $total = $total + $mostrar['subtotal']; 
+                        ?>
                     </tr>
-                    <?php } ?>
+                    <?php }
+                    $_SESSION['total']= $total ?>
 
                     <tr>
                         <td id="total">Total:</td>
@@ -65,8 +67,10 @@
 
         </table>
         <br>
-        <a href="cerrarcompra.php"><input type="button" value="Finalizar compra"></a>
+        
+        <a href="mercado_pago.php"><input type="button" value="Finalizar compra"></a>
         <a href="tiendaMujer.php"><input type="button" value="Seguir comprando"></a>
+        
         
     </center>
 </body>

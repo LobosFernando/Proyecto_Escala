@@ -555,3 +555,6 @@ canvas {
   position: relative;
   display: inline-block;
 }
+.checkut-btn{
+  width: auto;
+}
