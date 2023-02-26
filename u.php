@@ -6,12 +6,12 @@ $tallesDisponibles =  [];
 $cant =  [];
 
 if ($_SESSION['tipotalle'] == '1') {
-    if (isset($_POST['S'])) {
-        if ($_POST['S'] > 0) {
-            $_SESSION['talleS'] = $_POST['S'];
-            $_SESSION['tS'] = $_POST['tS'];
-            $tallesDisponibles[] = $_SESSION['tS'];
-            $cant[] = $_SESSION['talleS'];
+    if (isset($_POST['S'])) {// si recibe de s
+        if ($_POST['S'] > 0) { //si es mayor a 0
+            $_SESSION['talleS'] = $_POST['S']; //guarda nro 
+            $_SESSION['tS'] = $_POST['tS']; //guarda talle
+            $tallesDisponibles[] = $_SESSION['tS']; //Array de talles
+            $cant[] = $_SESSION['talleS']; //Array de numeros
         }
     }
     if (isset($_POST['M'])) {
