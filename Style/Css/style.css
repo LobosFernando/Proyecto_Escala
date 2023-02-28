@@ -1,7 +1,15 @@
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 0 !important;
+  overflow-x: hidden;
+  overflow-y: overlay;
 }
+.menu {
+  visibility: hidden;
+}
+/* .desplegable{
+  display: none;
+} */
 .encabezado {
   background-color: black;
   width: 100%;
@@ -10,7 +18,7 @@ body {
   position: relative;
   margin: 0 auto;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
+  
 }
 .img {
   height: 50px;
@@ -21,7 +29,7 @@ body {
   margin-top: 12px;
   position: relative;
 }
-
+  
 .nav {
   width: 600px;
   height: 70px;
@@ -39,522 +47,670 @@ body {
 a {
   margin-top: 13px;
   margin-left: 6%;
-  float: left;
-  text-decoration: none;
-}
-.redes{
-  width: 100%;
-  height: auto;
-  align-content: center;
-}
-
-.btnIniciarSesion {
+    float: left;
+    text-decoration: none;
+  }
+  .redes{
+    width: 100%;
+    height: auto;
+    align-content: center;
+  }
   
-  width: 125px;
-  height: 80px;
-  background-color: rgb(92, 92, 92);
-  color: white;
-  margin-top: 22px !important;
-  margin-left: 7%;
-  float: left;
-  height: 50%;
-  border-radius: 2em;
-  border: none;
-  outline: 2px solid rgb(92, 92, 92);
-  outline-offset: 3px;
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-.btn-group {
-  margin-left: 7%;
-}
-.btnIniciarSesion a{
-  margin-top: -3px;
-  margin-left: 16px;
-text-decoration: none;
-color: #fff;
-}
-.btnIniciarSesion:hover {
-  background: white;
-  
-}
-.btnIniciarSesion:hover a{
-  color:black !important;
-}
-.btnIniciarSesion p{
-  margin-top: 3px;
-  margin-left: 6px;
-text-decoration: none;
-color: #fff;
-}
-.btnIniciarSesion:hover p{
-  color:black !important;
-}
-
-.efectoSubrayado {
-  display: inline-block;
-  position: relative;
-  color: white;
-}
-
-.leftToRight::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: white;
-  -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
-  -o-transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-}
-.leftToRight:hover::after {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
-}
-
-#carrusel-caja {
-  -webkit-animation: automatizacion 10s infinite linear;
-  animation: automatizacion 10s infinite linear;
-  -webkit-transition: all 0.75s ease;
-  -o-transition: all 0.75s ease;
-  transition: all 0.75s ease;
-  height: 500px;
-  width: 300%;
-}
-#carrusel-contenido {
-  margin: 0 auto;
-  overflow: hidden;
-  text-align: left;
-}
-.imagenes {
-  height: 550px;
-  width: 100%;
-}
-.carrusel-elemento {
-  float: left;
-  width: 33.333%;
-}
-@-webkit-keyframes automatizacion {
-  0% {
-    margin-left: 0;
+  .btnIniciarSesion {
+    
+    width: 125px;
+    height: 80px;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    margin-top: 22px !important;
+    margin-left: 7%;
+    float: left;
+    height: 50%;
+    border-radius: 2em;
+    border: none;
+    outline: 2px solid rgb(92, 92, 92);
+    outline-offset: 3px;
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
-  30% {
-    margin-left: 0;
+  .btn-group {
+    margin-left: 7%;
   }
-  35% {
-    margin-left: -100%;
-  }
-  65% {
-    margin-left: -100%;
-  }
-  70% {
-    margin-left: -200%;
-  }
-  95% {
-    margin-left: -200%;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-@keyframes automatizacion {
-  0% {
-    margin-left: 0;
-  }
-  30% {
-    margin-left: 0;
-  }
-  35% {
-    margin-left: -100%;
-  }
-  65% {
-    margin-left: -100%;
-  }
-  70% {
-    margin-left: -200%;
-  }
-  95% {
-    margin-left: -200%;
-  }
-  100% {
-    margin-left: 0;
-  }
-}
-
-.accesoDirectoTienda {
-  margin-top: -10px;
-  background-color: black;
-  width: 100%;
-  height: 600px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.tiendaMujer .imgTiendaMujer {
-  margin-top: 40px;
-  width: 350px;
-  height: 500px;
-  position: relative;
-  -webkit-transition: all 0.7s;
-  -o-transition: all 0.7s;
-  transition: all 0.7s;
-}
-.textoEncima {
-  position: absolute;
-  top: 50%;
-  left: 47%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 25px;
-  color: transparent;
-  -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
-  transition: 0.7s;
-}
-.textoEncimaH {
-  position: absolute;
-  top: 50%;
-  left: 81%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 25px;
-  color: transparent;
-  -webkit-transition: 0.7s;
-  -o-transition: 0.7s;
-  transition: 0.7s;
-}
-.imgTiendaMujer:hover {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-}
-.tiendaMujer:hover .textoEncima {
-  color: black;
-}
-
-.tiendaHombre .imgTiendaHombre {
-  margin-top: 40px;
-  width: 350px;
-  height: 500px;
-  position: relative;
-  float: left;
-  -webkit-transition: all 0.7s;
-  -o-transition: all 0.7s;
-  transition: all 0.7s;
-}
-.tiendaHombre:hover .textoEncimaH {
-  color: black;
-}
-
-.imgTiendaHombre:hover {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-}
-h1 {
-  text-align: center !important;
-}
-.footer {
-  background-color: rgb(58, 55, 55);
-  width: 100%;
-  height: 180px;
-  margin-top: -25px;
-
-}
-.contieneEnlaces {
-  position: relative;
-}
-.enlacesFooter {
-  color: white;
+  .btnIniciarSesion a{
+    margin-top: -3px;
+    margin-left: 16px;
   text-decoration: none;
-  margin-left: 10%;
-  float: left;
-}
-
-.imgRedes {
-  height: 25px;
-  width: 25px;
-}
-.btn-wsp {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  line-height: 63px;
-  bottom: 25px;
-  right: 25px;
-  background: #25d366;
   color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 35px;
-  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  z-index: 100;
-  -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
-}
-.btn-wsp:hover {
-  background: #fff;
-  color: #20ba5a;
-}
-.recuadroRegister,
-.recuadroRecup,
-.recuadroLogin {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  width: 30%;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border: 1px solid black;
-  padding: 1%;
-}
-
-/***** Section *****/
-/*Perdon por la burrada
-<!-- 
-/***** End Section *****/
-.cajas {
-  float: right;
-  margin-top: -35px; 
-}
-.btnRegister {
-  width: auto;
-}
-.tengoCuenta {
-  margin-left: 30%;
-}
-.titulo-tienda {
-  width: 100%;
-  height: 15%;
-  text-align: center;
-  border-bottom: 1px solid rgba(70, 69, 69, 0.322);
-}
-
-.categorias {
-  margin: 4%;
-  padding: 1em;
-  width: 88%;
-  height: auto;
-  overflow: hidden;
-  
-}
-.item-cat-mujer {
-  
-  width: 19%;
-  height: 450px;
-  /* margin: 1em;
-  padding: 1em; */
-  overflow: hidden;
-  display: inline-block; 
-  transition: 1s;
+  }
+  .btnIniciarSesion:hover {
+    background: white;
+    
+  }
+  .btnIniciarSesion:hover a{
+    color:black !important;
+  }
+  .btnIniciarSesion p{
+    margin-top: 3px;
+    margin-left: 6px;
   text-decoration: none;
-}
-.item-cat-mujer img{
-width:100%;
-height:100%;
-}
-.item-cat-mujer:hover{
-  -webkit-filter: blur(5px);
-         filter: blur(5px);
-}
-.detalle {
-  width: 35%;
-  height: 90%;
-  float: right;
-  position:absolute;
-  border-top: 1px solid rgb(197, 197, 197);
-  border-bottom: 1px solid rgb(197, 197, 197);
-  border-right: 1px solid rgb(197, 197, 197);
-  font-family: Arial, Helvetica, sans-serif;
-  display: inline-block;
-}
-.descripcion {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  margin: 5%;
-}
+  color: #fff;
+  }
+  .btnIniciarSesion:hover p{
+    color:black !important;
+  }
+  
+  .efectoSubrayado {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .leftToRight::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    -webkit-transform-origin: bottom right;
+        -ms-transform-origin: bottom right;
+            transform-origin: bottom right;
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: -webkit-transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  }
+  .leftToRight:hover::after {
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+  }
+  
+  #carrusel-caja {
+    -webkit-animation: automatizacion 10s infinite linear;
+    animation: automatizacion 10s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    height: 500px;
+    width: 300%;
+  }
+  #carrusel-contenido {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: left;
+  }
+  .imagenes {
+    height: 550px;
+    width: 100%;
+  }
+  .carrusel-elemento {
+    float: left;
+    width: 33.333%;
+  }
+  @-webkit-keyframes automatizacion {
+    0% {
+      margin-left: 0;
+    }
+    30% {
+      margin-left: 0;
+    }
+    35% {
+      margin-left: -100%;
+    }
+    65% {
+      margin-left: -100%;
+    }
+    70% {
+      margin-left: -200%;
+    }
+    95% {
+      margin-left: -200%;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+  @keyframes automatizacion {
+    0% {
+      margin-left: 0;
+    }
+    30% {
+      margin-left: 0;
+    }
+    35% {
+      margin-left: -100%;
+    }
+    65% {
+      margin-left: -100%;
+    }
+    70% {
+      margin-left: -200%;
+    }
+    95% {
+      margin-left: -200%;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+  
+  .accesoDirectoTienda {
+    margin-top: -10px;
+    background-color: black;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  
+  .tiendaMujer .imgTiendaMujer {
+    margin-top: 40px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    -webkit-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
+  }
+  .textoEncima {
+    position: absolute;
+    top: 50%;
+    left: 47%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .textoEncimaH {
+    position: absolute;
+    top: 50%;
+    left: 81%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .imgTiendaMujer:hover {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+  .tiendaMujer:hover .textoEncima {
+    color: black;
+  }
+  
+  .tiendaHombre .imgTiendaHombre {
+    margin-top: 40px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    float: left;
+    -webkit-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
+  }
+  .tiendaHombre:hover .textoEncimaH {
+    color: black;
+  }
+  
+  .imgTiendaHombre:hover {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+  h1 {
+    text-align: center !important;
+  }
+  .footer {
+    background-color: rgb(58, 55, 55);
+    width: 100%;
+    height: 180px;
+    margin-top: -25px;
+  
+  }
+  .contieneEnlaces {
+    position: relative;
+  }
+  .enlacesFooter {
+    color: white;
+    text-decoration: none;
+    margin-left: 10%;
+    float: left;
+  }
+  
+  .imgRedes {
+    height: 25px;
+    width: 25px;
+  }
+  .btn-wsp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+  }
+  .btn-wsp:hover {
+    background: #fff;
+    color: #20ba5a;
+  }
+  .recuadroRegister,
+  .recuadroRecup,
+  .recuadroLogin {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 1%;
+  }
+  .cajas {
+    float: right;
+    margin-top: -35px; 
+  }
+  .btnRegister {
+    width: auto;
+  }
+  .tengoCuenta {
+    margin-left: 30%;
+  }
+  .titulo-tienda {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    border-bottom: 1px solid rgba(70, 69, 69, 0.322);
+  }
+  
+  .categorias {
+    margin: 4%;
+    padding: 1em;
+    width: 88%;
+    height: auto;
+    overflow: hidden;
+    
+  }
+  .item-cat-mujer {
+    
+    width: 19%;
+    height: 450px;
+    /* margin: 1em;
+    padding: 1em; */
+    overflow: hidden;
+    display: inline-block; 
+    transition: 1s;
+    text-decoration: none;
+  }
+  .item-cat-mujer img{
+  width:100%;
+  height:100%;
+  }
+  .item-cat-mujer:hover{
+    -webkit-filter: blur(5px);
+           filter: blur(5px);
+  }
+  .detalle {
+    width: 35%;
+    height: 90%;
+    float: right;
+    position:absolute;
+    border-top: 1px solid rgb(197, 197, 197);
+    border-bottom: 1px solid rgb(197, 197, 197);
+    border-right: 1px solid rgb(197, 197, 197);
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+  }
+  .descripcion {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: 5%;
+  }
+  
+  hr {
+    border: 0,1px solid rgb(197, 197, 197);
+  }
+  .coloresImg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 1px solid transparent;
+  }
+  .coloresImg:hover{
+    border-color: black;
+  }
+  #talles, #colores, #cantidad {
+    margin-left: 5%;
+  }
+  #btnCant {
+    width: 50px;
+    height: 30px;
+  }
+  .btnComprar {
+    margin-top: -30px;
+    width: 125px;
+    height: 40px;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    border-radius: 2em;
+    border: none;
+    outline: 2px solid rgb(92, 92, 92);
+    outline-offset: 3px;
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+  }
+  .btnComprar:hover {
+    background-color: black;
+    color: #fff;
+  }
+  #texto {
+    background-color: red;
+    /* margin-top: 100%; */
+    transition: 1s;
+    color: #fff;
+    text-shadow:0 0 10px black;
+  }
+  
+  .remeraStars {
+    width: 500px;
+    height: 750px;
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 200px;
+  }
+  
+  #tablaTalles {
+    border-collapse: collapse; 
+    margin: 3px 0; 
+    font-size: 0.8em; 
+    font-family: sans-serif; 
+    min-width: 100%; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+    visibility: hidden;
+  }
+  #tablaCarrito {
+    border-collapse: collapse; 
+    margin: 3px 0; 
+    font-size: 0.8em; 
+    font-family: sans-serif; 
+    min-width: 40%; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
+  }
+  #tablaCarrito th { background-color: #980081; color: #ffffff; text-align: middle; }
+  #tablaCarrito th { padding: 12px 15px; }
+  #tablaCarrito  tbody tr { border-bottom: 1px solid #dddddd; }
+  #tablaCarrito tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
+  #tablaCarrito tbody tr:last-of-type { border-bottom: 2px solid #009879; }
+  .cod {
+    visibility: hidden;
+  }
+  #tablaTalles th { background-color: #980081; color: #ffffff; text-align: middle; }
+  #tablaTalles th { padding: 12px 15px; }
+  #tablaTalles  tbody tr { border-bottom: 1px solid #dddddd; }
+  #tablaTalles tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
+  #tablaTalles tbody tr:last-of-type { border-bottom: 2px solid #009879; }
+  #total { background-color: yellow;}
+  .efectoSubrayado2 {
+    display: inline-block;
+    position: relative;
+    color: black;
+  }
+  .leftToRight2::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    -webkit-transform-origin: bottom right;
+        -ms-transform-origin: bottom right;
+            transform-origin: bottom right;
+    -webkit-transition: -webkit-transform 0.25s ease-out;
+    transition: -webkit-transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  }
+  .leftToRight2:hover::after {
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+  }
+  .dropdown-menu {
+    
+    width: 100%;
+  
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .eliminar {
+  width: 25px;
+  height: 25px;
+  
+  }
+  .eliminari {
+    border: 0;
+    width: 25px;
+    height: 25px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/216/216658.png');
+    background-size: cover;
+    color: transparent;
+    }
+  input[type=number] {
+      width: 70px;
+   }
+  canvas {
+    height: 20px;
+    width: 20px;
+  }
+  .imgProd {
+    width: 90%;
+    height: auto;
+    position: relative;
+    display: inline-block;
+  }
+  .checkut-btn{
+    width: auto;
+  }
+ 
 
-hr {
-  border: 0,1px solid rgb(197, 197, 197);
-}
-.coloresImg {
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-  border: 1px solid transparent;
-}
-.coloresImg:hover{
-  border-color: black;
-}
-#talles, #colores, #cantidad {
-  margin-left: 5%;
-}
-#btnCant {
-  width: 50px;
-  height: 30px;
-}
-.btnComprar {
-  margin-top: -30px;
-  width: 125px;
+@media only screen and (max-width: 575px){
+  #carrusel-caja {
+    -webkit-animation: automatizacion 10s infinite linear;
+    animation: automatizacion 10s infinite linear;
+    -webkit-transition: all 0.75s ease;
+    -o-transition: all 0.75s ease;
+    transition: all 0.75s ease;
+    height: auto !important; 
+    width: 300%;}
+    #carrusel-contenido {
+    margin: 0 auto;
+    overflow: visible !important;
+    text-align: left;
+    
+  }
+  .imagenes {
+    height: auto !important;
+    width: 100%;
+  }
+  .carrusel-elemento {
+    float: left;
+    width: 33.333%;
+  }
+  .encabezado {
+    background-color: black;
+    width: 100%;
+    height: 20% !important; 
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  .img {
   height: 40px;
-  background-color: rgb(92, 92, 92);
-  color: white;
-  border-radius: 2em;
-  border: none;
-  outline: 2px solid rgb(92, 92, 92);
-  outline-offset: 3px;
-  position: relative;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  margin-bottom: 10px;
-}
-.btnComprar:hover {
-  background-color: black;
-  color: #fff;
-}
-#texto {
-  background-color: red;
-  /* margin-top: 100%; */
-  transition: 1s;
-  color: #fff;
-  text-shadow:0 0 10px black;
-}
-
-.remeraStars {
-  width: 500px;
-  height: 750px;
-  background-size: cover;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 200px;
-}
-
-#tablaTalles {
-  border-collapse: collapse; 
-  margin: 3px 0; 
-  font-size: 0.8em; 
-  font-family: sans-serif; 
-  min-width: 100%; 
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
-  visibility: hidden;
-}
-#tablaCarrito {
-  border-collapse: collapse; 
-  margin: 3px 0; 
-  font-size: 0.8em; 
-  font-family: sans-serif; 
-  min-width: 40%; 
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); 
-}
-#tablaCarrito th { background-color: #980081; color: #ffffff; text-align: middle; }
-#tablaCarrito th { padding: 12px 15px; }
-#tablaCarrito  tbody tr { border-bottom: 1px solid #dddddd; }
-#tablaCarrito tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
-#tablaCarrito tbody tr:last-of-type { border-bottom: 2px solid #009879; }
-.cod {
-  visibility: hidden;
-}
-#tablaTalles th { background-color: #980081; color: #ffffff; text-align: middle; }
-#tablaTalles th { padding: 12px 15px; }
-#tablaTalles  tbody tr { border-bottom: 1px solid #dddddd; }
-#tablaTalles tbody tr:nth-of-type(even) { background-color: #f3f3f3; } 
-#tablaTalles tbody tr:last-of-type { border-bottom: 2px solid #009879; }
-#total { background-color: yellow;}
-.efectoSubrayado2 {
-  display: inline-block;
-  position: relative;
-  color: black;
-}
-.leftToRight2::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right;
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
-  -o-transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
-}
-.leftToRight2:hover::after {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: bottom left;
-      -ms-transform-origin: bottom left;
-          transform-origin: bottom left;
-}
-.dropdown-menu {
-  
-  width: 100%;
-
-  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
-}
-.eliminar {
-width: 25px;
-height: 25px;
-
-}
-.eliminari {
-  border: 0;
-  width: 25px;
-  height: 25px;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/216/216658.png');
-  background-size: cover;
-  color: transparent;
-  }
-input[type=number] {
-    width: 70px;
- }
-canvas {
-  height: 20px;
-  width: 20px;
-}
-.imgProd {
-  width: 90%;
-  height: auto;
-  position: relative;
-  display: inline-block;
-}
-.checkut-btn{
   width: auto;
+  z-index: 2;
+  margin: 0 auto;
+  margin-left: 33.33% !important;
+  margin-top: 5%px;
+  position: relative;
+  }
+  .nav {
+    width: 0;
+    height: 0;
+    position: relative;
+    margin-left: 200px;
+    float: right;
+    z-index: 2;
+    color: white;
+  }
+  .accesoDirectoTienda {
+    margin-top: -10px;
+    background-color: black;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: inline-table;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+  a {
+    /* margin-top: 13px; */
+    margin-left: 3%;
+    float: left;
+    text-decoration: none;
+  }
+  h1 {
+    margin-left: -5% !important;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .textoEncima {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .textoEncimaH {
+    position: absolute;
+    top: 76%;
+    left: 51%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: transparent;
+    -webkit-transition: 0.7s;
+    -o-transition: 0.7s;
+    transition: 0.7s;
+  }
+  .footer {
+    background-color: rgb(58, 55, 55);
+    width: 100%;
+    height: 280px;
+    margin-top: -75px;
+  }
+  .contieneEnlaces {
+    /* display: flex; */
+    height: 200px;
+    position: absolute;
+  }
+  .enlacesFooter {
+    width: 100% !important;
+    color: white;
+    text-decoration: none;
+    /* margin-left: 10%; */
+    /* float: left; */
+  }
+  .menu {
+    visibility: visible;
+    margin-top: 2%;
+    margin-left: 2%;
+    height: 28px;
+    width: 28px;
+    position: absolute;
+  }
+  .desplegable {
+    display: none;
+    z-index: 25;
+    background-color: black;
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    overflow: visible;
+  }
+  
+  a{
+    color: white !important;
+    text-decoration: none !important;
+  }
+  ul {
+    list-style: none;
 }
+}
+    
+
+
+  

@@ -6,6 +6,7 @@
 </head>
 <?php session_start(); ?>
 <div class="encabezado">
+    <img src="menu.png" class="menu" onclick="desplega()">
     <img class="img" src="Assets/Imágenes/logo.png" alt="">
     <div class="nav">
         <a href="index.php">
@@ -35,6 +36,7 @@
 <?php } else { ?>
     <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
 <?php } ?>
+
 </div>
 
 </div>
