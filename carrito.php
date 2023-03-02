@@ -68,8 +68,8 @@
         </table>
         <br>
         
-        <a href="mercado_pago.php"><input type="button" value="Finalizar compra"></a>
-        <a href="tiendaMujer.php"><input type="button" value="Seguir comprando"></a>
+        <a class="a_carrito" href="mercado_pago.php"><input type="button" value="Finalizar compra"></a>
+        <a class="a_carrito" href="index.php"><input type="button" value="Seguir comprando"></a>
         
         
     </center>

@@ -31,7 +31,7 @@ error_reporting(0);
         <h1><?php echo $_SESSION['prod'] ?></h1>
     </div>
     <div class="remeraStars">
-        <img class="imgProd" src="Assets/Imágenes/RemeraHola.jpg" alt="">
+        <img class="imgProd" src="Assets/Imágenes/<?php echo $_SESSION['prodSE']?>.jpg" alt="">
         <div class="detalle">
             <center>
                 <h2 class="descripcion"><?php echo $escribir['descripcion'] ?></h2>
@@ -59,7 +59,7 @@ error_reporting(0);
                         
                     <?php
                     $cantTalles++;
-                    }
+                    } 
                 
                     ?>
                     <input type="hidden" name="cantTalles" value="<?php echo $cantTalles ?>">

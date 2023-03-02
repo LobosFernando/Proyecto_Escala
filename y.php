@@ -2,5 +2,6 @@
 include 'Conexion.php';
 session_start();
 $_SESSION['prod']= $_POST['productoElegido'];
-header("Location: RemeraHola.php");
+$_SESSION['prodSE']=str_replace(' ', '', $_SESSION['prod']); 
+header("Location: Producto.php");
 ?>

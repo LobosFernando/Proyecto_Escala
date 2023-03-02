@@ -21,7 +21,7 @@ include 'Conexion.php' ?>
 
     </div>
     <center>
-        
+        <form action="tienda_cat.php" method="POST">
             <div class="categorias">
                 <?php
             $sql= "SELECT * FROM categoriasmujer";
@@ -30,19 +30,24 @@ include 'Conexion.php' ?>
         while ($i<4){
             while ($row= mysqli_fetch_array($r)){ 
                 $sincortar= $row['nombreCatM'];
-                $cadena = substr($sincortar, 0, -1);?>
-                <a href=" <?php echo $sincortar?>.php" class="item-cat-mujer"> 
-                <h1 id="texto"> <?php echo $cadena?>  </h1>
-                <img src="Assets/Imágenes/<?php echo $sincortar?>.jpg" alt="">
+                $cadena = substr($sincortar, 0, -1);
+                ?>
+                
+                <a href="Categoria.php" class="item-cat-mujer"> 
+                <h1 id="texto"> <?php echo $cadena?></h1>
+                <img src="Assets/Imágenes/<?php echo $sincortar?>.jpg" alt=""> 
+                <input type="submit" name="catElegida"  value="<?php echo $sincortar?>">
                 </a>
                 <?php
             
             }
             $i++;
+            
         }
         ?>
         <br>
         </div>
+        </form>
     </center>
     <a href="https://api.whatsapp.com/send?phone=543564589550" target="_blank" class="btn-wsp"> <i class="fa fa-whatsapp icono"></i></i></a>
     <?php include 'footer.php'; ?>

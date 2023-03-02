@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <title>Tienda hombre</title>
+    <title>Tienda Hombres</title>
 </head>
 
 <body>
@@ -17,11 +17,11 @@
 include 'Conexion.php' ?>
 
     <div class="titulo-tienda">
-        <h1>Hombre</h1>
+        <h1>Hombres</h1>
 
     </div>
     <center>
-        
+        <form action="tienda_cat.php" method="POST">
             <div class="categorias">
                 <?php
             $sql= "SELECT * FROM categoriashombre";
@@ -29,21 +29,25 @@ include 'Conexion.php' ?>
         $i=0;
         while ($i<4){
             while ($row= mysqli_fetch_array($r)){ 
-                
+                $cadena= $row['nombrecath'];
                 ?>
                 
-                <a href=" <?php echo $row['nombrecath']?>.php" class="item-cat-mujer"> 
-                <h1 id="texto"> <?php echo $row['nombrecath'] ?>  </h1>
-                <img src="Assets/Imágenes/<?php echo $row['nombrecath']?>.jpg" alt="">
+                <a href="Categoria.php" class="item-cat-mujer"> 
+                <h1 id="texto"> <?php echo $cadena?>  </h1>
+                <img src="Assets/Imágenes/<?php echo $cadena?>.jpg" alt="">
+                <input type="submit" name="catElegida" value= "<?php echo $cadena?>" >
                 </a>
+                
                 <?php
             
             }
             $i++;
+            
         }
         ?>
         <br>
         </div>
+        </form>
     </center>
     <a href="https://api.whatsapp.com/send?phone=543564589550" target="_blank" class="btn-wsp"> <i class="fa fa-whatsapp icono"></i></i></a>
     <?php include 'footer.php'; ?>

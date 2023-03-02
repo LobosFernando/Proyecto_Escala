@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include 'encabezado.php';
+error_reporting(0);
+
+include 'Conexion.php' ?>
 
 <head>
     <meta charset="UTF-8">
@@ -9,14 +13,12 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-    <title>Remeras Mujer</title>
+    <title><?php echo $_SESSION['catCortada']; ?></title>
 </head>
 
 <body>
-    <?php include 'encabezado.php';
-    include 'Conexion.php' ?>
     <div class="titulo-tienda">
-        <h1>Remeras/Mujer</h1>
+        <h1><?php echo $_SESSION['catCortada']; ?></h1>
 
     </div>
 
@@ -25,27 +27,25 @@
         <div class="categorias">
             <form action="y.php" method="post">
                 <?php
-                $sql = "SELECT * FROM prod WHERE categoria ='RemerasM'";
+                $sql = "SELECT * FROM prod WHERE categoria = '$_SESSION[cat]'";
                 $r = mysqli_query($conn, $sql);
                 $i = 0;
                 while ($i < 4) {
                     while ($row = mysqli_fetch_assoc($r)) {
                         $sincortar = $row['nombreProd'];
                         $cadena = substr($sincortar, 0, -1);
-                        $cadena2 = str_replace(' ', '', $sincortar);
-                         ?>
-                        <a href="remeraHola.php" class="item-cat-mujer">
+                        $cadena2 = str_replace(' ', '', $sincortar); ?>
+                        <a href="Producto.php" class="item-cat-mujer">
                             <h1 id="texto"> <?php echo $cadena ?> </h1>
-                            <img src="Assets/Imágenes/<?php echo $sincortar ?>.jpg" alt="">
-                            
-                    
+                            <img src="Assets/Imágenes/<?php echo $cadena2 ?>.jpg" alt="">
+                            <input type="submit" name="productoElegido" value="<?php echo $sincortar ?>">
                         </a>
-                        <input type="submit" name="productoElegido" value= "<?php echo $sincortar?>" >
-                        <?php
-                    }
-                    $i++;?>
-                    
+                        
                     <?php
+                    }
+                    $i++; ?>
+
+                <?php
                 }
                 ?>
                 <br>
