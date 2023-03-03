@@ -93,6 +93,7 @@ a {
   }
   .btnIniciarSesion:hover {
     background: white;
+    color: #000000;
     
   }
   .btnIniciarSesion:hover a{

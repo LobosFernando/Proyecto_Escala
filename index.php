@@ -31,6 +31,7 @@
         <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
         <?php
         session_start();
+        include 'Conexion.php';
         if (isset($_SESSION['usuario'])) { ?>
 
             <div class="btn-group" role="group">
@@ -39,7 +40,15 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
+                    <?php $sql= "SELECT idRol FROM usuarios WHERE nombreDeUsuario= '$_SESSION[usuario]'" ;
+                    $res=mysqli_query($conn, $sql);
+                    while ($a = mysqli_fetch_array($res)){
+                        if ($a['idRol']== 1){?>
+                            <li><a class="dropdown-item" style="margin-left: 0%;" href="panelAdmin.php">Panel Admin</a></li><?php
+                        }
+                    } ?>
                     <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
+                    
                 </ul>
 
             </div>
