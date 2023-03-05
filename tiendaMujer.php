@@ -14,8 +14,56 @@
 </head>
 
 <body>
-<?php include 'encabezado.php';
+<?php
+error_reporting(0);
 include 'Conexion.php' ?>
+<div class="encabezado">
+    <img src="menu.png" class="menu" id="menu" onclick="desplega()" >
+    <img class="img" src="Assets/Imágenes/logo.png" alt="">
+    <div class="nav">
+
+        <a href="index.php">
+            <p class="efectoSubrayado leftToRight">Inicio</p>
+        </a>
+        <a href="acercaDe.php">
+            <p class="efectoSubrayado leftToRight">Acerca de</p>
+        </a>
+        <a href="contacto.php">
+            <p class="efectoSubrayado leftToRight">Contacto</p>
+        </a>
+        <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
+
+        <?php
+        session_start();
+        include 'Conexion.php';
+        if (isset($_SESSION['usuario'])) { ?>
+
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btnIniciarSesion" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['usuario'] ?>
+                </button>
+                
+
+            </div>
+            
+    </div>
+    <button class="btnIniciarSesion2"> <a href="login.php"><?php echo $_SESSION['usuario'] ?></a></button>
+    
+<?php } else { ?>
+    <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
+<?php } ?>
+
+</div>
+
+</div>
+    <div class="desplegable" id="desplegable">
+    <ul>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="tiendaMujer.php">Tienda Mujer</a></li>
+            <li><a href="tiendaHombres.php">Tienda Hombre</a><li>
+            <li><a href="contacto.php">Contacto</a></li>
+        </ul>
+    </div>
 
     <div class="titulo-tienda">
         <h1>Mujer</h1>

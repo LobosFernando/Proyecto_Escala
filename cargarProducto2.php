@@ -28,7 +28,7 @@
 </head>
 <body>
 <div class="encabezado">
-        <center> <img class="img" src="Assets/Imágenes/logo.png" alt=""></center>
+<center> <a href="index.php"><img class="img" src="Assets/Imágenes/logo.png" alt=""></a></center>
     </div>
     <div id="contenedor">
 

@@ -51,12 +51,13 @@ error_reporting(0);
                 <h3 id="talles">Talles</h3>
                 <center>
                     <?php
-                    $sql3 = "SELECT talle FROM detalleProducto WHERE producto= '$_SESSION[prod]' AND cant>0"; 
+                    $sql3 = "SELECT talle, cant FROM detalleProducto WHERE producto= '$_SESSION[prod]' AND cant>0"; 
                     $resultado = mysqli_query($conn, $sql3);
                     $cantTalles=0;
                     while ($escribir = mysqli_fetch_array($resultado)) { ?>
                         <label for="talles"><?php echo $escribir['talle'] ?>:</label>
                         <input type="number" name="talles<?php echo $cantTalles ?>" id="talles" min="0" max="<?php echo $escribir['cant']?>">
+                        
                         
                     <?php
                     $cantTalles++;

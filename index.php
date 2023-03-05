@@ -20,6 +20,7 @@
     <img src="menu.png" class="menu" id="menu" onclick="desplega()" >
     <img class="img" src="Assets/Imágenes/logo.png" alt="">
     <div class="nav">
+
         <a href="index.php">
             <p class="efectoSubrayado leftToRight">Inicio</p>
         </a>
@@ -30,6 +31,7 @@
             <p class="efectoSubrayado leftToRight">Contacto</p>
         </a>
         <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
+
         <?php
         session_start();
         include 'Conexion.php';
@@ -53,7 +55,25 @@
                 </ul>
 
             </div>
+            
     </div>
+    <button id="btnGroupDrop1" type="button" class="btnIniciarSesion2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['usuario'] ?>
+                    </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
+                    <?php $sql= "SELECT idRol FROM usuarios WHERE nombreDeUsuario= '$_SESSION[usuario]'" ;
+                    $res=mysqli_query($conn, $sql);
+                    while ($a = mysqli_fetch_array($res)){
+                        if ($a['idRol']== 1){?>
+                            <li><a class="dropdown-item" style="margin-left: 0%;" href="panelAdmin.php">Panel Admin</a></li><?php
+                        }
+                    } ?>
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
+                    
+                </ul>
+    
+    
 <?php } else { ?>
     <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
 <?php } ?>
@@ -69,6 +89,18 @@
             <li><a href="contacto.php">Contacto</a></li>
         </ul>
     </div>
+    <script>
+    function desplega(){
+        if (document.getElementById("desplegable").style.display == "none") {
+            document.getElementById("desplegable").style.display = "block";
+        } else {
+            document.getElementById("desplegable").style.display = "none";
+        }
+        
+        
+    }
+</script>
+
     <div id="carrusel-contenido">
         <div id="carrusel-caja">
             <div class="carrusel-elemento">
@@ -102,16 +134,5 @@
     <?php include 'footer.php'; ?>
 
 </body>
-<script>
-    function desplega(){
-        if (document.getElementById("desplegable").style.display == "none") {
-            document.getElementById("desplegable").style.display = "block";
-        } else {
-            document.getElementById("desplegable").style.display = "none";
-        }
-        
-        
-    }
-</script>
 
 </html>

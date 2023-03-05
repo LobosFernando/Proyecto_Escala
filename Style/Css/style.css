@@ -9,6 +9,9 @@ body {
   width: 100%;
   color: white;
 }
+.btnIniciarSesion2 {
+  visibility: hidden;
+}
 .menu {
   visibility: hidden;
 }
@@ -31,7 +34,7 @@ body {
   z-index: 2;
   margin: 0 auto;
   margin-left: 45px !important;
-  margin-top: 12px;
+  margin-top: 12px; 
   position: relative;
 }
 .borrar {
@@ -93,7 +96,7 @@ a {
   color: #fff;
   }
   .a_carrito {
-    margin-left: 27% !important;
+    margin-left: 44% !important;
     float: left;
   }
   .btnIniciarSesion:hover {
@@ -579,7 +582,7 @@ a {
   }
  
 
-@media only screen and (max-width: 575px){
+@media only screen and (max-width: 470px){
   #carrusel-caja {
     -webkit-animation: automatizacion 10s infinite linear;
     animation: automatizacion 10s infinite linear;
@@ -617,7 +620,7 @@ a {
   z-index: 2;
   margin: 0 auto;
   margin-left: 33.33% !important;
-  margin-top: 5%px;
+  margin-top: 5%;
   position: relative;
   }
   .nav {
@@ -690,7 +693,7 @@ a {
     bottom: 0;
   }
   .contieneEnlaces {
-    margin-top: -10%;
+    margin-top: -5%;
     position: absolute;
 }
   .enlacesFooter {
@@ -807,9 +810,77 @@ a {
   font-size: x-small;
   }
   .a_carrito {
-    margin-left: 13% !important;
+    margin-left: 30% !important;
     float: left;
   }
+  .btnIniciarSesion2 {
+    width: 27%;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    margin-top: 10px !important;
+    margin-left: 5%;
+    float: none !important; 
+    border-radius: 2em;
+    border: none;
+    outline: 2px solid rgb(92, 92, 92);
+    outline-offset: 3px;
+    position: relative;
+    visibility: visible;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .btnIniciarSesion2 a{
+    margin-top: -3px;
+    margin-left: 25%;
+  text-decoration: none;
+  color: #fff;
+  }
+  .btnIniciarSesion2:hover {
+    background: white;
+    color: #000000;
+    
+  }
+  .btnIniciarSesion2:hover a{
+    color:black !important;
+  }
+  .btnIniciarSesion2 p{
+    margin-top: 3px;
+    margin-left: 6px;
+  text-decoration: none;
+  color: #fff;
+  }
+  .btnIniciarSesion2:hover p{
+    color:black !important;
+  }
+  .dropdown-menu {
+    z-index: 1000;
+    width: auto;
+    float: right;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529 !important;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529 !important;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
 }
     
 
