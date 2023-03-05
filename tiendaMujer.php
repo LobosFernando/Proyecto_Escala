@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <title>Tienda mujer</title>
 </head>
 
@@ -34,9 +35,9 @@ include 'Conexion.php' ?>
                 ?>
                 
                 <a href="Categoria.php" class="item-cat-mujer"> 
-                <h1 id="texto"> <?php echo $cadena?></h1>
+                
                 <img src="Assets/Imágenes/<?php echo $sincortar?>.jpg" alt=""> 
-                <input type="submit" name="catElegida"  value="<?php echo $sincortar?>">
+                <input type="submit" name="catElegida" class="btnSubmit" value="<?php echo $sincortar?>">
                 </a>
                 <?php
             

@@ -4,6 +4,11 @@ body {
   overflow-x: hidden;
   overflow-y: overlay;
 }
+.btnSubmit{
+  background-color: black;
+  width: 100%;
+  color: white;
+}
 .menu {
   visibility: hidden;
 }
@@ -461,6 +466,7 @@ a {
     transition: 1s;
     color: #fff;
     text-shadow:0 0 10px black;
+    font-size: x-large;
   }
   
   .remeraStars {

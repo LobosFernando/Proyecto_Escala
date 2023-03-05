@@ -14,6 +14,7 @@ error_reporting(0);
     <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <?php
     $sql2 = "SELECT * FROM prod WHERE nombreProd= '$_SESSION[prod]'";

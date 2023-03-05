@@ -37,8 +37,9 @@
                 <?php
                 include 'Conexion.php';
                 error_reporting(0);
-                
                 session_start();
+                if (isset($_SESSION['usuario'])) {
+                
                 
                 
                 ?>
@@ -71,6 +72,10 @@
            
         </div>
     </div>
-    
+    <?php
+} else {
+                    header("Location: login.php");
+                    exit();
+                }?>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>Tienda Hombres</title>
 </head>
@@ -33,9 +34,9 @@ include 'Conexion.php' ?>
                 ?>
                 
                 <a href="Categoria.php" class="item-cat-mujer"> 
-                <h1 id="texto"> <?php echo $cadena?>  </h1>
+                
                 <img src="Assets/Imágenes/<?php echo $cadena?>.jpg" alt="">
-                <input type="submit" name="catElegida" value= "<?php echo $cadena?>" >
+                <input type="submit" name="catElegida" class="btnSubmit" value= "<?php echo $cadena?>" >
                 </a>
                 
                 <?php

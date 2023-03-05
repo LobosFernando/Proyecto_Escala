@@ -37,7 +37,7 @@
                 <?php
                 include 'Conexion.php';
                 session_start();
-                
+                if (isset($_SESSION['usuario'])) {
                 ?>
                 <form action="" method="post" id="form"><?php
                     if ($_SESSION['tipotalle']=='1'){ ?>
@@ -132,6 +132,10 @@
            
         </div>
     </div>
-    
+    <?php
+} else {
+                    header("Location: login.php");
+                    exit();
+                }?>
 </body>
 </html>

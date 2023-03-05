@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style/Css/style.css">
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <script src="script.js"></script>
     <title>Carrito</title>
 </head>
@@ -30,6 +31,9 @@
                 include 'Conexion.php';
                 session_start();
                 $nombreDeUsuario = $_SESSION['usuario'];
+                if (isset($_SESSION['usuario'])) { //si tiene sesion iniciada
+                  
+                
                 $sql = "SELECT * FROM carrito WHERE usuario='$nombreDeUsuario' ";
                 $res = mysqli_query($conn, $sql);
                 $total = 0;
@@ -72,7 +76,11 @@
         <a class="a_carrito" href="index.php"><input type="button" value="Seguir comprando"></a>
         
         
-    </center>
+    </center><?php
+} else {
+                    header("Location: login.php");
+                    exit();
+                }?>
 </body>
 
 </html>

@@ -12,6 +12,7 @@ include 'Conexion.php' ?>
     <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title><?php echo $_SESSION['catCortada']; ?></title>
 </head>
@@ -36,9 +37,8 @@ include 'Conexion.php' ?>
                         $cadena = substr($sincortar, 0, -1);
                         $cadena2 = str_replace(' ', '', $sincortar); ?>
                         <a href="Producto.php" class="item-cat-mujer">
-                            <h1 id="texto"> <?php echo $cadena ?> </h1>
                             <img src="Assets/Imágenes/<?php echo $cadena2 ?>.jpg" alt="">
-                            <input type="submit" name="productoElegido" value="<?php echo $sincortar ?>">
+                            <input type="submit" name="productoElegido" class="btnSubmit" value="<?php echo $sincortar ?>">
                         </a>
                         
                     <?php

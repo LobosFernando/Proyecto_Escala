@@ -11,7 +11,7 @@
     <title> Formulario Login </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <meta name="author" content="Videojuegos & Desarrollo">
     <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
     <meta name="keywords" content="login,formulariode acceso html">

@@ -15,7 +15,7 @@
     <meta name="author" content="Videojuegos & Desarrollo">
     <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
     <meta name="keywords" content="login,formulariode acceso html">
-
+    <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
     <!-- Link hacia el archivo de estilos css -->
