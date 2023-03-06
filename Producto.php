@@ -59,8 +59,8 @@ error_reporting(0);
                     $cantTalles=0;
                     while ($escribir = mysqli_fetch_array($resultado)) { ?>
                         <label for="talles"><?php echo $escribir['talle'] ?>:</label>
-                        <input type="number" name="talles<?php echo $cantTalles ?>" id="talles" min="0" max="<?php echo $escribir['cant']?>">
-                        
+                        <input type="number" name="<?php echo $escribir['talle']?>" id="talles" min="0" max="<?php echo $escribir['cant']?>">
+                        <input type="hidden" name="t<?php echo $escribir['talle']?>" value="<?php echo $escribir['talle']?>">
                         
                     <?php
                     $cantTalles++;

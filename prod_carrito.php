@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 include 'Conexion.php';
 session_start();
@@ -7,30 +7,32 @@ $nombreDeUsuario = $_SESSION['usuario'];
 $nombreProd = $_SESSION['prod'];
 $_SESSION['comprar'] = $_POST['comprar']; //guarda en session la accion del boton
 $_SESSION['color'] = $_POST['color'];
-$cantTalles = $_POST['cantTalles'];
 $_SESSION['t'] = $_POST['eliminar'];
-
-$sql2 = "SELECT * FROM carrito WHERE usuario='$nombreDeUsuario' "; //todos los productos en carrito del usuario
-$res2 = mysqli_query($conn, $sql2);
-$total = 0;
-
-
-$suma = 0;
-for ($i = 0; $i < $cantTalles; $i++) {
-    $suma = $suma +  (int)($_POST['talles' . $i]); //suma cantidad de talles seleciionados
-    echo $_POST['talles' . $i];
+$tallesElegidos = [];
+$cantE =  [];
+$subtotales =  [];
+$sql3 = "SELECT talle FROM detalleProducto WHERE producto= '$_SESSION[prod]' AND cant>0"; 
+$resultado = mysqli_query($conn, $sql3);
+$cant2=0;
+while ($row =mysqli_fetch_assoc($resultado)){
+    if ($_POST[$row['talle']]>0){ //por cada vez que llega un talle
+        $_SESSION[$row['talle']]= $_POST[$row['talle']]; //nro
+        $_SESSION['t'.$row['talle']]= $_POST['t'.$row['talle']];  //letra
+        $tallesElegidos[]=$_SESSION['t'.$row['talle']]; //array letras
+        $cantE[]=$_SESSION[$row['talle']]; //array nros  
+        $cant2++; //cant talles seleccionados
+        $subtotales[]= $_SESSION[$row['talle']]*$_SESSION['precio']; //subtotal(cant productos x precio)
+    }
 }
-$_SESSION['suma'] = $suma;
-$precio = $_SESSION['precio'] * $_SESSION['suma']; //calcula subtotal
-//guarda cantidad en sesion
-
 
 if (isset($_SESSION['usuario'])) { //si tiene sesion iniciada
     if (isset($_POST['comprar'])) { //solo si viene desde el producto
-
-        $sql = "INSERT INTO carrito (producto, color, cantidad, precio, subtotal, usuario)
-            VALUES ('$nombreProd', '$_SESSION[color]', '$_SESSION[suma]', '$_SESSION[precio]', '$precio', '$_SESSION[usuario]')";
-        $result = mysqli_query($conn, $sql);
+        for ($i = 0; $i < $cant2; $i++) {
+            $sql = "INSERT INTO carrito (producto, talle, color, cantidad, precio, subtotal, usuario)
+            VALUES ('$nombreProd', '$tallesElegidos[$i]','$_SESSION[color]', '$cantE[$i]', '$_SESSION[precio]', '$subtotales[$i]', '$_SESSION[usuario]')";
+        $result = mysqli_query($conn, $sql); 
+        }
+        
         header("Location:carrito.php");
     } else {
         header("Location:w.php");
@@ -40,3 +42,4 @@ if (isset($_SESSION['usuario'])) { //si tiene sesion iniciada
     exit();
 }
 
+?>
