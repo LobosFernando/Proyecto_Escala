@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
@@ -17,44 +19,7 @@
 <?php
 error_reporting(0);
 include 'Conexion.php' ?>
-<div class="encabezado">
-    <img src="menu.png" class="menu" id="menu" onclick="desplega()" >
-    <img class="img" src="Assets/Imágenes/logo.png" alt="">
-    <div class="nav">
-
-        <a href="index.php">
-            <p class="efectoSubrayado leftToRight">Inicio</p>
-        </a>
-        <a href="acercaDe.php">
-            <p class="efectoSubrayado leftToRight">Acerca de</p>
-        </a>
-        <a href="contacto.php">
-            <p class="efectoSubrayado leftToRight">Contacto</p>
-        </a>
-        <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
-
-        <?php
-        session_start();
-        include 'Conexion.php';
-        if (isset($_SESSION['usuario'])) { ?>
-
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btnIniciarSesion" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo $_SESSION['usuario'] ?>
-                </button>
-                
-
-            </div>
-            
-    </div>
-    <button class="btnIniciarSesion2"> <a href="login.php"><?php echo $_SESSION['usuario'] ?></a></button>
-    
-<?php } else { ?>
-    <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
-<?php } ?>
-
-</div>
-
+<?php include 'encabezado.php'; ?>
 </div>
     <div class="desplegable" id="desplegable">
     <ul>

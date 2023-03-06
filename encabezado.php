@@ -1,15 +1,9 @@
-<html>
 
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-</head>
-<?php session_start();
-error_reporting(0); ?>
 <div class="encabezado">
-    <img src="menu.png" class="menu" onclick="desplega()">
+    <img src="menu.png" class="menu" id="menu" onclick="desplega()" >
     <img class="img" src="Assets/Imágenes/logo.png" alt="">
     <div class="nav">
+
         <a href="index.php">
             <p class="efectoSubrayado leftToRight">Inicio</p>
         </a>
@@ -19,21 +13,60 @@ error_reporting(0); ?>
         <a href="contacto.php">
             <p class="efectoSubrayado leftToRight">Contacto</p>
         </a>
+
         <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
+        <?php 
+        include 'Conexion.php';
+        session_start();
+        $sql2= "SELECT SUM(cantidad) FROM carrito WHERE usuario= '$_SESSION[usuario]'";
+        $res2=mysqli_query($conn, $sql2);
+        while ($r= mysqli_fetch_array($res2)){
+            $cantProd=$r[0];?>
+            <img src="Assets/Imágenes/<?php echo $cantProd?>.PNG" class="nroCarrito" alt=""><?php
+        }?>
+        
+
         <?php
+        
         if (isset($_SESSION['usuario'])) { ?>
 
             <div class="btn-group" role="group">
-                <button type="button" class="btnIniciarSesion" data-bs-toggle="dropdown">
-                    <p><?php echo $_SESSION['usuario'] ?>
+                <button id="btnGroupDrop1" type="button" class="btnIniciarSesion" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['usuario'] ?>
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
+                    <?php $sql= "SELECT idRol FROM usuarios WHERE nombreDeUsuario= '$_SESSION[usuario]'" ;
+                    $res=mysqli_query($conn, $sql);
+                    while ($a = mysqli_fetch_array($res)){
+                        if ($a['idRol']== 1){?>
+                            <li><a class="dropdown-item" style="margin-left: 0%;" href="panelAdmin.php">Panel Admin</a></li><?php
+                        }
+                    } ?>
                     <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
+                    
                 </ul>
 
             </div>
+            
     </div>
+    <button id="btnGroupDrop1" type="button" class="btnIniciarSesion2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['usuario'] ?>
+                    </button>
+                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
+                    <?php $sql= "SELECT idRol FROM usuarios WHERE nombreDeUsuario= '$_SESSION[usuario]'" ;
+                    $res=mysqli_query($conn, $sql);
+                    while ($a = mysqli_fetch_array($res)){
+                        if ($a['idRol']== 1){?>
+                            <li><a class="dropdown-item" style="margin-left: 0%;" href="panelAdmin.php">Panel Admin</a></li><?php
+                        }
+                    } ?>
+                    <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
+                    
+                </ul>
+    
+    
 <?php } else { ?>
     <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
 <?php } ?>
@@ -41,5 +74,4 @@ error_reporting(0); ?>
 </div>
 
 </div>
-
-</html>
+    

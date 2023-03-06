@@ -8,62 +8,15 @@
     <link rel="stylesheet" href="Style\Css\style.css">
     <link rel="stylesheet" href="fontello.css">
     <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="Assets/Imágenes/favicon.png">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>Tienda Hombres</title>
 </head>
 
 <body>
-<div class="encabezado">
-    <img src="menu.png" class="menu" id="menu" onclick="desplega()" >
-    <img class="img" src="Assets/Imágenes/logo.png" alt="">
-    <div class="nav">
-
-        <a href="index.php">
-            <p class="efectoSubrayado leftToRight">Inicio</p>
-        </a>
-        <a href="acercaDe.php">
-            <p class="efectoSubrayado leftToRight">Acerca de</p>
-        </a>
-        <a href="contacto.php">
-            <p class="efectoSubrayado leftToRight">Contacto</p>
-        </a>
-        <a href="carrito.php"><img src="Assets/Imágenes/carritoFinal.png" alt=""></a>
-
-        <?php
-        session_start();
-        include 'Conexion.php';
-        if (isset($_SESSION['usuario'])) { ?>
-
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btnIniciarSesion" data-bs-toggle="dropdown" aria-expanded="false">
-                    <?php echo $_SESSION['usuario'] ?>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                    <li><a class="dropdown-item" style="margin-left: 0%;" href="perfil.php">Editar perfil</a></li>
-                    <?php $sql= "SELECT idRol FROM usuarios WHERE nombreDeUsuario= '$_SESSION[usuario]'" ;
-                    $res=mysqli_query($conn, $sql);
-                    while ($a = mysqli_fetch_array($res)){
-                        if ($a['idRol']== 1){?>
-                            <li><a class="dropdown-item" style="margin-left: 0%;" href="panelAdmin.php">Panel Admin</a></li><?php
-                        }
-                    } ?>
-                    <li><a class="dropdown-item" style="margin-left: 0%;" href="logout.php">Cerrar sesión</a></li>
-                    
-                </ul>
-
-            </div>
-            
-    </div>
-    <button class="btnIniciarSesion2"> <a href="login.php"><?php echo $_SESSION['usuario'] ?></a></button>
-    
-<?php } else { ?>
-    <button class="btnIniciarSesion"> <a href="login.php">Iniciar sesión</a></button>
-<?php } ?>
-
-</div>
-
-</div>
+<?php include 'encabezado.php'; ?>
     <div class="desplegable" id="desplegable">
     <ul>
             <li><a href="index.php">Inicio</a></li>

@@ -40,6 +40,11 @@ body {
 .borrar {
   display: none;
 }
+.nroCarrito {
+  height: 18px;
+  width: auto;
+  margin-top: 15px;
+}
   
 .nav {
   width: 600px;

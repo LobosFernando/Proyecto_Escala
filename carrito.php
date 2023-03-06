@@ -1,27 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><?php session_start();
-                error_reporting(0);
-                require 'vendor/autoload.php';
-                MercadoPago\SDK::setAccessToken('TEST-1040330731403668-112123-1b16af8758f9cd4f1490ae6b4a60be99-254635608');
-                $preference = new MercadoPago\Preference();
-                $item = new MercadoPago\Item();
-                $item->id = 1;
-                $item->title = 'Productos';
-                $item->quantity = 1;
-                $item->unit_price = $_SESSION['total'];
-                $item->currency_id = "AR";
-
-
-                $preference->items = array($item);
-
-                $preference->back_urls = array(
-                    "success" => "http://localhost:3000/captura.php",
-                    "failure" => "http://localhost:3000/fallo.php"
-                );
-                $preference->auto_return = "approved";
-                $preference->binary_mode = true;
-                $preference->save();
-                ?>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -40,13 +18,14 @@
 <body>
 <div class="encabezado">
     </div>
-    <h1>Carrito</h1>
+    <h1>Carrito</h1> 
     <center>
         <table id="tablaCarrito">
             <form action="prod_carrito.php" method="post">
                 <tr>
 
                     <th>Producto</th>
+                    <th>Talle</th>
                     <th>Color</th>
                     <th>Cantidad</th>
                     <th>Precio Unitario</th>
@@ -71,6 +50,7 @@
                         <tr>
 
                             <td align="center"><?php echo $mostrar['producto'] ?></td>
+                            <td align="center"><?php echo $mostrar['talle'] ?></td>
                             <td align="center"><canvas style="background-color: <?php echo $mostrar['color'] ?>;"></canvas></td>
                             <td align="center"><?php echo $mostrar['cantidad'] ?></td>
                             <td align="center"><?php echo '$' . $mostrar['precio'] ?></td>
@@ -87,6 +67,7 @@
 
                     <tr>
                         <td id="total">Total:</td>
+                        <td id="total"></td>
                         <td id="total"></td>
                         <td id="total"></td>
                         <td id="total"></td>
@@ -109,6 +90,29 @@
                     exit();
                 } ?>
 </body>
+<?php 
+                error_reporting(0);
+                require 'vendor/autoload.php';
+                MercadoPago\SDK::setAccessToken('TEST-1040330731403668-112123-1b16af8758f9cd4f1490ae6b4a60be99-254635608');
+                $preference = new MercadoPago\Preference();
+                $item = new MercadoPago\Item();
+                $item->id = 1;
+                $item->title = 'Productos';
+                $item->quantity = 1;
+                $item->unit_price = $_SESSION['total'];
+                $item->currency_id = "AR";
+
+
+                $preference->items = array($item);
+
+                $preference->back_urls = array(
+                    "success" => "http://localhost:3000/captura.php",
+                    "failure" => "http://localhost:3000/fallo.php"
+                );
+                $preference->auto_return = "approved";
+                $preference->binary_mode = true;
+                $preference->save();
+                ?>
 <script>
     const mp = new MercadoPago('TEST-0c6020ee-af1e-424d-8b50-520a890381f3', {
         locale: 'es-AR'
