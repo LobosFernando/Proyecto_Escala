@@ -106,7 +106,7 @@
                 $preference->items = array($item);
 
                 $preference->back_urls = array(
-                    "success" => "http://localhost:3000/captura.php",
+                    "success" => "http://localhost:3000/ventas.php",
                     "failure" => "http://localhost:3000/fallo.php"
                 );
                 $preference->auto_return = "approved";
