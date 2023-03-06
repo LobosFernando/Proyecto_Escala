@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'encabezado.php';
+<?php
 error_reporting(0);
 
 include 'Conexion.php' ?>

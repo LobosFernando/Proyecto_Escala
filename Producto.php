@@ -8,6 +8,7 @@ error_reporting(0);
 ?>
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +85,13 @@ error_reporting(0);
                 </center>
                 <hr>
             </div>
-          
+          <h3 id="envio">Método de envío</h3>
+          <center>
+            
+            <input type="radio" name="envio" checked >
+            <label for="envio">Retiro por sucursal (España 27- San Francisco)</label>
+          </center>
+          <hr>
             <center>
                 <div class="comprar">
                     <input class="btnComprar" type="submit" name="comprar" value="Agregar al carrito">

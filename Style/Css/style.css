@@ -41,9 +41,10 @@ body {
   display: none;
 }
 .nroCarrito {
-  height: 18px;
+  height: 20px;
   width: auto;
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-left: -10px;
 }
   
 .nav {
@@ -442,15 +443,15 @@ a {
     border-color: black;
   }
   #talles, #colores, #cantidad {
-    margin-left: 5%;
+    margin-left: 2%;
   }
   #btnCant {
     width: 50px;
     height: 30px;
   }
   .btnComprar {
-    margin-top: -30px;
-    width: 125px;
+    margin-top: 15%;
+    width: 155px;
     height: 40px;
     background-color: rgb(92, 92, 92);
     color: white;
