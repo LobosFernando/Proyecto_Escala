@@ -4,6 +4,9 @@ body {
   overflow-x: hidden;
   overflow-y: overlay;
 }
+.btn-success{
+  margin-left: 850%;
+}
 .btnSubmit{
   background-color: black;
   width: 100%;
@@ -570,6 +573,14 @@ a {
     background-size: cover;
     color: transparent;
     }
+    .veri {
+      border: 0;
+      width: 25px;
+      height: 25px;
+      background-image: url('https://cdn-icons-png.flaticon.com/128/709/709612.png');
+      background-size: cover;
+      color: transparent;
+      }
   input[type=number] {
       width: 70px;
    }
