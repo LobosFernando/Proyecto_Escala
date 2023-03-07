@@ -45,7 +45,7 @@
                     $total = 0;
                     $arrayIds = array();
                     while ($mostrar = mysqli_fetch_array($res)) {
-                        $arrayIds[] = $mostrar['producto'];
+                       
                 ?>
                         <tr>
 
