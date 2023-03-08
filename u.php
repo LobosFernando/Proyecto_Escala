@@ -232,4 +232,4 @@ for ($i = 0; $i < count($tallesDisponibles); $i++) {
     $r = mysqli_query($conn, $query);
 }
 
-header("Location: cargarProducto5.php");
+header("Location: index.php");

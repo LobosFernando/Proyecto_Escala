@@ -41,7 +41,7 @@
             <div id="login2">
                 <a href="cargarCategoria.php"><input type="button" value="Cargar Categoría"></a>
                 <a href="cargarProducto.php"><input type="button" value="Cargar Producto"></a>
-                <a href="ventas.php"><input type="button" value="Visualizar Ventas"></a>
+                <a href="verVentas.php"><input type="button" value="Visualizar Ventas"></a>
                 <a href="stock.php"><input type="button" value="Visualizar Stock"></a>
             </div>
             </center>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2023 a las 04:14:17
+-- Tiempo de generación: 07-03-2023 a las 16:25:39
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -30,21 +30,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `carrito` (
   `idCarrito` int(11) NOT NULL,
   `producto` varchar(30) NOT NULL,
+  `talle` varchar(5) NOT NULL,
   `color` varchar(30) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `precio` float NOT NULL,
   `subtotal` float NOT NULL,
   `usuario` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `carrito`
---
-
-INSERT INTO `carrito` (`idCarrito`, `producto`, `color`, `cantidad`, `precio`, `subtotal`, `usuario`) VALUES
-(133, 'Remera Hola', '#1f6d93', 0, 19990, 0, 'Ju1234'),
-(134, 'Remera Chau', '#139563', 2, 3590, 7180, 'Ju1234'),
-(135, 'Remera Hola', '#c60c0c', 1, 19990, 19990, 'Ju1234');
 
 -- --------------------------------------------------------
 
@@ -108,11 +100,40 @@ CREATE TABLE `detalleproducto` (
 --
 
 INSERT INTO `detalleproducto` (`idDetalleProducto`, `producto`, `color`, `talle`, `cant`) VALUES
-(36, 'Remera Hola', '#c60c0c', 'S', 1),
-(37, 'Remera Hola', '#c60c0c', 'XL', 1),
-(38, 'Remera Hola', '#1f6d93', 'M', 1),
-(39, 'Remera Hola', '#1f6d93', '3XL', 1),
-(40, 'Remera Chau', '#139563', 'L', 1);
+(45, 'Short Engomado', '#000000', '44', 1),
+(46, 'Short Engomado', '#000000', '46', 2),
+(47, 'Remera Hola', '#c22424', 'S', 1),
+(48, 'Remera Hola', '#c22424', 'M', 2),
+(49, 'Remera Hola', '#1dcbd7', 'L', 1),
+(50, 'Remera Chau', '#3c9b22', 'S', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalleventas`
+--
+
+CREATE TABLE `detalleventas` (
+  `idDetalleVentas` int(11) NOT NULL,
+  `idVenta` int(11) NOT NULL,
+  `producto` varchar(30) NOT NULL,
+  `talle` varchar(10) NOT NULL,
+  `color` varchar(30) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` float NOT NULL,
+  `subtotal` float NOT NULL,
+  `usuario` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalleventas`
+--
+
+INSERT INTO `detalleventas` (`idDetalleVentas`, `idVenta`, `producto`, `talle`, `color`, `cantidad`, `precio`, `subtotal`, `usuario`) VALUES
+(25, 17, 'Short Engomado', '44', '#000000', 1, 7990, 7990, 'Ju1234'),
+(26, 17, 'Short Engomado', '46', '#000000', 2, 7990, 15980, 'Ju1234'),
+(28, 18, 'Short Engomado', '44', '#000000', 1, 7990, 7990, 'Ju1234'),
+(29, 18, 'Short Engomado', '46', '#000000', 2, 7990, 15980, 'Ju1234');
 
 -- --------------------------------------------------------
 
@@ -153,7 +174,8 @@ CREATE TABLE `prod` (
 
 INSERT INTO `prod` (`codProd`, `nombreProd`, `categoria`, `descripcion`, `precio`) VALUES
 (41, 'Remera Hola', 'RemerasM', 'Remera bordada ', 19990),
-(42, 'Remera Chau', 'RemerasM', 'etd', 3590);
+(45, 'Short Engomado', 'ShortsM', 'Hermoso', 7990),
+(46, 'Remera Chau', 'RemerasM', 'Hermosa', 5000);
 
 -- --------------------------------------------------------
 
@@ -183,6 +205,14 @@ CREATE TABLE `roles` (
   `idRol` int(11) NOT NULL,
   `tipoRol` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`idRol`, `tipoRol`) VALUES
+(1, 'Admin'),
+(2, 'Cliente');
 
 -- --------------------------------------------------------
 
@@ -292,9 +322,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nombreDeUsuario`, `nombre`, `apellido`, `correoElectronico`, `dni`, `domicilio`, `idLocalidad`, `telefono`, `idRol`, `contraseña`) VALUES
-(4, 'Ju1234', 'Ju', NULL, 'ju@gmail.com', NULL, NULL, NULL, NULL, NULL, '123'),
-(5, 'thiago124', 'Thiago', NULL, 'thiago@gmail.com', NULL, NULL, NULL, NULL, NULL, '1234'),
-(6, 'dana123', 'Dana', NULL, 'dana@gmail.com', NULL, NULL, NULL, NULL, NULL, '1234');
+(4, 'Ju1234', 'Ju', NULL, 'ju@gmail.com', NULL, NULL, NULL, NULL, 1, '123'),
+(5, 'thiago124', 'Thiago', NULL, 'thiago@gmail.com', NULL, NULL, NULL, NULL, 2, '1234'),
+(6, 'dana123', 'Dana', NULL, 'dana@gmail.com', NULL, NULL, NULL, NULL, 2, '1234');
 
 -- --------------------------------------------------------
 
@@ -303,10 +333,19 @@ INSERT INTO `usuarios` (`idUsuario`, `nombreDeUsuario`, `nombre`, `apellido`, `c
 --
 
 CREATE TABLE `ventas` (
-  `nroVenta` int(11) NOT NULL,
-  `nombreDeUsuario` varchar(20) DEFAULT NULL,
-  `montoTotal` int(11) DEFAULT NULL
+  `idVenta` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `total` float NOT NULL,
+  `usuario` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`idVenta`, `fecha`, `total`, `usuario`) VALUES
+(17, '2023-03-07', 23970, 'Ju1234'),
+(18, '2023-03-07', 23970, 'Ju1234');
 
 --
 -- Índices para tablas volcadas
@@ -335,6 +374,12 @@ ALTER TABLE `categoriasmujer`
 --
 ALTER TABLE `detalleproducto`
   ADD PRIMARY KEY (`idDetalleProducto`);
+
+--
+-- Indices de la tabla `detalleventas`
+--
+ALTER TABLE `detalleventas`
+  ADD PRIMARY KEY (`idDetalleVentas`);
 
 --
 -- Indices de la tabla `localidades`
@@ -392,8 +437,8 @@ ALTER TABLE `usuarios`
 -- Indices de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`nroVenta`),
-  ADD KEY `FK_VentasUsuario` (`nombreDeUsuario`);
+  ADD PRIMARY KEY (`idVenta`),
+  ADD KEY `FK_VentasUsuario` (`usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -403,7 +448,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `idCarrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT de la tabla `categoriashombre`
@@ -421,7 +466,13 @@ ALTER TABLE `categoriasmujer`
 -- AUTO_INCREMENT de la tabla `detalleproducto`
 --
 ALTER TABLE `detalleproducto`
-  MODIFY `idDetalleProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `idDetalleProducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de la tabla `detalleventas`
+--
+ALTER TABLE `detalleventas`
+  MODIFY `idDetalleVentas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `localidades`
@@ -433,7 +484,7 @@ ALTER TABLE `localidades`
 -- AUTO_INCREMENT de la tabla `prod`
 --
 ALTER TABLE `prod`
-  MODIFY `codProd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `codProd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT de la tabla `provincias`
@@ -445,7 +496,7 @@ ALTER TABLE `provincias`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `sexo`
@@ -475,7 +526,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `nroVenta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idVenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas
@@ -504,7 +555,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  ADD CONSTRAINT `FK_VentasUsuario` FOREIGN KEY (`nombreDeUsuario`) REFERENCES `usuarios` (`nombreDeUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_VentasUsuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`nombreDeUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,6 +18,7 @@
         <?php 
         include 'Conexion.php';
         session_start();
+<<<<<<< HEAD
         if (isset($_SESSION['usuario'])){
         $sql2= "SELECT SUM(cantidad) FROM carrito WHERE usuario= '$_SESSION[usuario]'";
         $res2=mysqli_query($conn, $sql2);
@@ -26,12 +27,20 @@
             <img src="Assets/Imágenes/<?php echo $cantProd?>.PNG" class="nroCarrito" alt=""><?php
         }
     }?>
+=======
+>>>>>>> 23c3275ebf3fc3b86578d5d3360256a698a132ef
         
+        ?>
 
         <?php
         
-        if (isset($_SESSION['usuario'])) { ?>
-
+        if (isset($_SESSION['usuario'])) { 
+            $sql2= "SELECT SUM(cantidad) FROM carrito WHERE usuario= '$_SESSION[usuario]'";
+        $res2=mysqli_query($conn, $sql2);
+        while ($r= mysqli_fetch_array($res2)){
+            $cantProd=$r[0]; ?>
+            <img src="Assets/Imágenes/<?php echo $cantProd?>.PNG" class="nroCarrito" alt=""><?php
+        }?>
             <div class="btn-group" role="group">
                 <button id="btnGroupDrop1" type="button" class="btnIniciarSesion" data-bs-toggle="dropdown" aria-expanded="false">
                     <?php echo $_SESSION['usuario'] ?>
