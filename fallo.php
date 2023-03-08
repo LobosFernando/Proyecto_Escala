@@ -1,3 +1,3 @@
 <?php
 
-echo 'Error al realizar el pago';
+echo 'Error al realizar el pago';?>
