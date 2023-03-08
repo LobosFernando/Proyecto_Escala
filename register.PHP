@@ -53,6 +53,26 @@
                     <input id="contraseña" type="password" placeholder="Contraseña" name="contraseña" required>
 
                     <button type="submit" title="Registrar" name="Registrar">Registrar</button>
+                    <?php
+    if (isset($_POST["usuario"])) {
+        $nombre = $_POST['nombre'];
+        $usuario = $_POST['usuario'];
+        $correo = $_POST['correo'];
+        $contraseña = $_POST['contraseña'];
+        include 'Conexion.php';
+        $sql = "SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' or correoElectronico='$correo'";
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) { ?>
+            <h3 style="color:#D62B06">Usuario ya registrado</h3> <?php }
+        else {
+            $sql2= "INSERT INTO usuarios (nombreDeUsuario, nombre, correoElectronico, contraseña) VALUES 
+            ('$usuario', '$nombre', '$correo', '$contraseña')";
+            $ex=mysqli_query($conn, $sql2);?>
+            <h3 style="color:green">Registro exitoso</h3> <?php
+            
+        } 
+    }
+    ?>
                 </form>
 
             </div>
@@ -69,25 +89,7 @@
             </div>
         </div>
     </div>
-    <?php
-    if (isset($_POST["usuario"])) {
-        $nombre = $_POST['nombre'];
-        $usuario = $_POST['usuario'];
-        $correo = $_POST['correo'];
-        $contraseña = $_POST['contraseña'];
-        include 'Conexion.php';
-        $sql = "SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' or correoElectronico='$correo'";
-        $result = mysqli_query($conn, $sql);
-        if ($result->num_rows > 0) {
-            echo 'error';}
-        else {
-            $sql2= "INSERT INTO usuarios (nombreDeUsuario, nombre, correoElectronico, contraseña) VALUES 
-            ('$usuario', '$nombre', '$correo', '$contraseña')";
-            $ex=mysqli_query($conn, $sql2);
-            echo 'registro exitoso';
-        } 
-    }
-    ?>
+    
 </body>
 
 </html>

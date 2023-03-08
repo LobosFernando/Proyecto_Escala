@@ -69,19 +69,7 @@
                         
                         $sql = "INSERT INTO $categoria ($columna
                         ) VALUES ('$nombreC')";
-                        $sql2=  "CREATE TABLE $nombreC (
-                            id INTEGER PRIMARY KEY,
-                            nombre VARCHAR(30) not null,
-                            descripcion VARCHAR(200) not null,
-                            precio INTEGER not null,
-                            stockS INTEGER not null,
-                            stockM INTEGER not null,
-                            stockL INTEGER not null,
-                            stockXL INTEGER not null,
-                            stockXXL INTEGER not null
-                        );";
                         $result = mysqli_query($conn, $sql);
-                        $result = mysqli_query($conn, $sql2);
                         if ($result) {
                             ?><h3 style="color:green ;">Categoría cargada con éxito.</h3><?php
                         }

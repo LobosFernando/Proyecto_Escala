@@ -48,7 +48,26 @@
                     <input id="password" type="password" placeholder="Contraseña" name="password" required>
 
                     <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                    <?php
+    if (isset($_POST["usuario"])) {
 
+        $usuario = $_POST['usuario'];
+        $contraseña = $_POST['password'];
+        include 'Conexion.php';
+        $sql = "SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' && contraseña='$contraseña' ";
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows > 0) {
+            session_start();
+            $_SESSION['usuario'] = $usuario;
+            $_SESSION['contraseña']   = $contraseña;
+            header("Location: index.php");
+            exit();
+        } else {?>
+            <h3 style="color:#D62B06">Error. Usuario o contraseña incorrectos.</h3><?php
+            }
+        
+    }
+    ?>
 
 
                 </form>
@@ -68,23 +87,7 @@
             </div>
         </div>
     </div>
-    <?php
-    if (isset($_POST["usuario"])) {
-
-        $usuario = $_POST['usuario'];
-        $contraseña = $_POST['password'];
-        include 'Conexion.php';
-        $sql = "SELECT nombreDeUsuario FROM usuarios where nombredeusuario='$usuario' && contraseña='$contraseña' ";
-        $result = mysqli_query($conn, $sql);
-        if ($result->num_rows > 0) {
-            session_start();
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['contraseña']   = $contraseña;
-            header("Location: index.php");
-            exit();
-        } else echo 'error';
-    }
-    ?>
+    
 </body>
 
 </html>
