@@ -17,17 +17,7 @@
         <?php
         include 'Conexion.php';
         session_start();
-        if (isset($_SESSION['usuario'])) {
-            $sql2 = "SELECT SUM(cantidad) FROM carrito WHERE usuario= '$_SESSION[usuario]'";
-            $res2 = mysqli_query($conn, $sql2);
-            while ($r = mysqli_fetch_array($res2)) {
-                $cantProd = $r[0]; ?>
-                <img src="Assets/Imágenes/<?php echo $cantProd ?>.PNG" class="nroCarrito" alt=""><?php
-                                                                                            }
-                                                                                        } ?>
-
-        <?php
-
+    
         if (isset($_SESSION['usuario'])) {
             $sql2 = "SELECT SUM(cantidad) FROM carrito WHERE usuario= '$_SESSION[usuario]'";
             $res2 = mysqli_query($conn, $sql2);
