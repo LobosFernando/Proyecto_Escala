@@ -597,9 +597,11 @@ a {
   .checkut-btn{
     width: auto;
   }
- 
+@media only screen and (min-width:656px) and (max-width:1034px){
 
-@media only screen and (max-width: 470px){
+}
+
+@media only screen and (max-width: 655px){
   #carrusel-caja {
     -webkit-animation: automatizacion 10s infinite linear;
     animation: automatizacion 10s infinite linear;

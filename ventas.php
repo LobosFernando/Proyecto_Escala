@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'Conexion.php'; /////////////////SI SE EJECUTA LA VENTA
-//$sql="INSERT INTO ventas (fecha, total, usuario) VALUES (NOW(),'$_SESSION[total]','$_SESSION[usuario]')"; //INSERTA VENTA
-// $res= mysqli_query($conn, $sql);
+$sql="INSERT INTO ventas (fecha, total, usuario) VALUES (NOW(),'$_SESSION[total]','$_SESSION[usuario]')"; //INSERTA VENTA
+$res= mysqli_query($conn, $sql);
 $obteneridventa = "SELECT `AUTO_INCREMENT` 
  FROM  INFORMATION_SCHEMA.TABLES
  WHERE TABLE_SCHEMA = 'bdescala'
